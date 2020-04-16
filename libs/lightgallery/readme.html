@@ -1,0 +1,129 @@
+<h1 id="lightgallery-js"><a href="#lightgallery-js" class="headerlink" title="lightgallery.js"></a>lightgallery.js</h1><p><img src="https://travis-ci.org/sachinchoolur/lightgallery.js.svg?branch=master" alt="travis"><br><img src="https://img.shields.io/bower/v/lightgallery.js.svg" alt="bower"><br><img src="https://img.shields.io/npm/v/lightgallery.js.svg" alt="npm"></p>
+<p>Full featured JavaScript lightbox gallery. No dependencies.</p>
+<p><img src="https://raw.githubusercontent.com/sachinchoolur/lightgallery.js/gh-pages/lightgallery.png" alt="lightgallery"></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/" target="_blank" rel="noopener">lightgallery demo</a></li>
+<li><a href="https://codepen.io/sachinchoolur/pen/qNyvGW" target="_blank" rel="noopener">Codepen demo</a></li>
+</ul>
+<h2 id="Main-features"><a href="#Main-features" class="headerlink" title="Main features"></a>Main features</h2><ul>
+<li>Fully responsive.</li>
+<li>Modular architecture with built in plugins.</li>
+<li>Touch support for mobile devices.</li>
+<li>Mouse drag supports for desktops.</li>
+<li>Double-click/Double-tap to see actual size of the image.</li>
+<li>Animated thumbnails.</li>
+<li>Social media sharing.</li>
+<li>YouTube, Vimeo, Dailymotion, VK and HTML5 video support.</li>
+<li>20+ Hardware-Accelerated CSS3 transitions.</li>
+<li>Dynamic mode.</li>
+<li>Full screen support.</li>
+<li>Supports zoom.</li>
+<li>Browser history API.</li>
+<li>Responsive images.</li>
+<li>HTML iframe support.</li>
+<li>Multiple instances on one page.</li>
+<li>Easily customizable via CSS (SCSS) and Settings.</li>
+<li>Smart image preloading and code optimization.</li>
+<li>Keyboard Navigation for desktop.</li>
+<li>Font icon support.</li>
+<li>And many more.</li>
+</ul>
+<h2 id="Browser-support"><a href="#Browser-support" class="headerlink" title="Browser support"></a>Browser support</h2><p>lightgallery supports all major browsers including IE 9 and above.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install-with-Bower"><a href="#Install-with-Bower" class="headerlink" title="Install with Bower"></a>Install with Bower</h3><p>You can install <code>lightgallery</code> using the <a href="http://bower.io" target="_blank" rel="noopener">Bower</a> package manager.</p>
+<pre><code class="sh">bower install lightgallery.js --save</code></pre>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>You can also find <code>lightgallery</code> on <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a>.</p>
+<pre><code class="sh">npm install lightgallery.js</code></pre>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p><a href="http://www.jsdelivr.com/projects/lightgallery.js" target="_blank" rel="noopener">http://www.jsdelivr.com/projects/lightgallery.js</a></p>
+<h3 id="Download-from-GitHub"><a href="#Download-from-GitHub" class="headerlink" title="Download from GitHub"></a>Download from GitHub</h3><p>You can also directly download lightgallery from GitHub.</p>
+<h2 id="Include-CSS-and-JavaScript-files"><a href="#Include-CSS-and-JavaScript-files" class="headerlink" title="Include CSS and JavaScript files"></a>Include CSS and JavaScript files</h2><p>First of all add lightgallery.css in the <code>&lt;head&gt;</code> of the document.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/lightgallery.css"</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span></code></pre>
+<p>Then include <code>lightgallery.min.js</code> into your document.<br>If you want to include any lightgallery plugin you can include it after <code>lightgallery.min.js</code>.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">body</span>&gt;</span>
+    ...
+
+    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/lightgallery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+    <span class="comment">&lt;!-- lightgallery plugins --&gt;</span>
+    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/lg-thumbnail.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/lg-fullscreen.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span></code></pre>
+<p>Lightgallery also supports AMD, CommonJS and ES6 modules.<br>When you use AMD make sure that lightgallery.js is loaded before lightgallery modules.</p>
+<pre><code class="js"><span class="built_in">require</span>([<span class="string">'./lightgallery.js'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="built_in">require</span>([<span class="string">"./lg-zoom.js"</span>, <span class="string">"./lg-thumbnail.js"</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        lightGallery(<span class="built_in">document</span>.getElementById(<span class="string">'lightgallery'</span>));
+    });
+});</code></pre>
+<h2 id="The-markup"><a href="#The-markup" class="headerlink" title="The markup"></a>The markup</h2><p>lightgallery does not force you to use any kind of markup. You can use whatever markup you want.<br>But i suggest you to use the following markup.<br><a href="https://sachinchoolur.github.io/lightgallery.js/demos/html-markup.html" target="_blank" rel="noopener">Here</a><br>you can find the detailed examples of different kinds of markup.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lightgallery"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"img/img1.jpg"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/thumb1.jpg"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"img/img2.jpg"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/thumb2.jpg"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+    ...
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<h2 id="Call-the-plugin"><a href="#Call-the-plugin" class="headerlink" title="Call the plugin"></a>Call the plugin</h2><p>Finally you need to initiate the gallery by adding the following code.</p>
+<pre><code class="js">&lt;script&gt;
+    lightGallery(<span class="built_in">document</span>.getElementById(<span class="string">'lightgallery'</span>));
+&lt;<span class="regexp">/script&gt;</span></code></pre>
+<h2 id="Support-lightgallery"><a href="#Support-lightgallery" class="headerlink" title="Support lightgallery"></a>Support lightgallery</h2><p>If you like lightgallery please support the project by staring the repository or <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=lightgallery%20-%20Full%20featured%20%23javascript%20lightbox%20gallery%2C%20No%20%23jQuery%20-%20http%3A%2F%2Fbit.ly%2F2amlfJe" target="_blank">tweet</a> about this project.</p>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html" target="_blank" rel="noopener">API Reference</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#events" target="_blank" rel="noopener">Events</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#methods" target="_blank" rel="noopener">Methods</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#attributes" target="_blank" rel="noopener">Data Attributes</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#dynamic" target="_blank" rel="noopener">Dynamic variables</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#sass" target="_blank" rel="noopener">Sass variables</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/docs/plugin-api.html" target="_blank" rel="noopener">Module API</a></li>
+</ul>
+<h2 id="Demos"><a href="#Demos" class="headerlink" title="Demos"></a>Demos</h2><ul>
+<li>Thumbnails<ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/" target="_blank" rel="noopener">Gallery with animated thumbnails</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/#normal-thumb" target="_blank" rel="noopener">Gallery without animated thumbnails</a></li>
+</ul>
+</li>
+<li>YouTube, Vimeo Video Gallery<ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/videos.html" target="_blank" rel="noopener">YouTube, Vimeo Video Gallery</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#video-without-poster" target="_blank" rel="noopener">Video Gallery Without Poster</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#video-player-param" target="_blank" rel="noopener">Video Player Parameters</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#auto-thumb" target="_blank" rel="noopener">Automatically load thumbnails</a></li>
+</ul>
+</li>
+<li>HTML5 Video Gallery<ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/html5-videos.html" target="_blank" rel="noopener">HTML5 Video Gallery</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/html5-videos.html#video-without-poster" target="_blank" rel="noopener">HTML5 video gallery with videojs</a></li>
+</ul>
+</li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/transitions.html" target="_blank" rel="noopener">Transitions</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/dynamic.html" target="_blank" rel="noopener">Dynamic</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/events.html" target="_blank" rel="noopener">Events</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/methods.html" target="_blank" rel="noopener">Methods</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/iframe.html" target="_blank" rel="noopener">Iframe. External websites, Google map etc.</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/captions.html" target="_blank" rel="noopener">Captions</a></li>
+<li>Responsive images<ul>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/responsive.html" target="_blank" rel="noopener">Responsive images</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/responsive.html#srcset-demo" target="_blank" rel="noopener">Responsive images with HTML5 srcset</a></li>
+</ul>
+</li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/fixed-size.html" target="_blank" rel="noopener">Gallery with fixed size</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/html-markup.html" target="_blank" rel="noopener">HTML Markup</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/comment-box.html" target="_blank" rel="noopener">Facebook comments</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/easing.html" target="_blank" rel="noopener">Easing</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/hash.html" target="_blank" rel="noopener">History/hash plugin</a></li>
+<li><a href="https://sachinchoolur.github.io/lightgallery.js/demos/share.html" target="_blank" rel="noopener">Social media share</a></li>
+</ul>
+<h2 id="Built-in-modules"><a href="#Built-in-modules" class="headerlink" title="Built in modules"></a>Built in modules</h2><ol>
+<li>Thumbnail - <a href="https://github.com/sachinchoolur/lg-thumbnail.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-thumbnial" target="_blank" rel="noopener">Docs</a></li>
+<li>Autoplay - <a href="https://github.com/sachinchoolur/lg-autoplay.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-autoplay" target="_blank" rel="noopener">Docs</a></li>
+<li>Video - <a href="https://github.com/sachinchoolur/lg-video.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-video" target="_blank" rel="noopener">Docs</a></li>
+<li>Fullscreen - <a href="https://github.com/sachinchoolur/lg-fullscreen.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-fullscreen" target="_blank" rel="noopener">Docs</a></li>
+<li>Pager - <a href="https://github.com/sachinchoolur/lg-pager.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-pager" target="_blank" rel="noopener">Docs</a></li>
+<li>Zoom - <a href="https://github.com/sachinchoolur/lg-zoom.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-zoom" target="_blank" rel="noopener">Docs</a></li>
+<li>Hash - <a href="https://github.com/sachinchoolur/lg-hash.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-hash" target="_blank" rel="noopener">Docs</a></li>
+<li>Share - <a href="https://github.com/sachinchoolur/lg-share.js" target="_blank" rel="noopener">GItHub</a> - <a href="https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-share" target="_blank" rel="noopener">Docs</a></li>
+</ol>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><h4 id="Commercial-license"><a href="#Commercial-license" class="headerlink" title="Commercial license"></a>Commercial license</h4><p>If you want to use lightgallery.js to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a lightgallery.js Commercial License at <a href="https://www.uplabs.com/posts/lightgallery-js" target="_blank" rel="noopener">uplabs.com/posts/lightgallery-js</a></p>
+<h4 id="Open-source-license"><a href="#Open-source-license" class="headerlink" title="Open source license"></a>Open source license</h4><p>If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use this project under the terms of the GPLv3.</p>

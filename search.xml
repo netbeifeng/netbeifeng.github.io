@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Go West</title>
+      <link href="/sketch/go_west/"/>
+      <url>/sketch/go_west/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<hr><h2 id="红色的巨人应声倒下"><a href="#红色的巨人应声倒下" class="headerlink" title="红色的巨人应声倒下"></a>红色的巨人应声倒下</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"autoplay":true,"video":{"url":"Go_West.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);player.on("loadstart",function(){console.log("loadstart")})})()</script> </div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2020 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/tutorial/hello-world/"/>
+      <url>/tutorial/hello-world/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> tutorial </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Take Me Home, Railroad.</title>
+      <link href="/sketch/take_me_home_railroad/"/>
+      <url>/sketch/take_me_home_railroad/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>穿过黑暗狭长的隧道之后，夕阳很快就铺满了车厢。</p><p>微弱的光线穿透过玻璃，折射在身上，和车厢内扑腾出的冷气相比，温度已经是所剩无几了。日落之前之前的最后一点余晖，尤其惹人怜爱，你把身子往下挪些，好让头枕在窗边，垂下眼睑，贪婪地攫取着所剩无几的阳光。</p><p>车厢内还是一如继往的嘈杂，孱弱无力的广播声被无情地盖过去。又快要到站了，车厢晃动的幅度逐渐增大，轨道和列车之间发出尖锐刺耳的摩擦声，竟一度压过车内的嚷闹。</p><p>火车的玻璃窗并不干净，布满污渍与尘埃，还有不知何时留下的掌印，但这并不影响你观察窗外的景致。近处是一片荒凉的菜地，若不是地里间隔有序的几星绿色，也不会将它认作是菜地，加上荒凉或许更准确一些。再往远看，是正在施工的工地，连绵着远处的群山。天空中没有云，太阳的颜色正间于橙红之间，勾勒出山峦唯美的轮廓。恍惚间成了一幅雅致的剪影画，好想停下来捕捉下这一完美的瞬间。</p><p>当你拿出手机跃跃欲试的时候才发现，原来列车就是一条奔腾的河，车上的人是河里的水滴和浪花，景物也不过是经流一瞬的美好罢了。它在横亘浙赣又猛折向南的的河道上奔流，披着日月，奔鸣着号角，掀起轰隆的巨浪。透过刺眼的残阳，你仿佛能看见自己第一次坐火车，投进一条汹涌的河。那时的你在这块灰蒙蒙的玻璃里只看见一张青涩的面庞，你只是怀着一颗天真无暇的心，被将要到来大千世界的风雨世面激动得坐卧不宁。身后的人，甚至忘了去告别。</p><p>山峦消失了，疾驰的列车也徐徐停下，一部分乘客直起身，左顾右盼地蠢蠢欲动，最后攒动着消失在过道与车门间的夕阳里。</p><p>你漫不经心扫了一眼窗外，上饶站，离家只有三小时了。</p><p>漆黑的夜晚暴露着恐惧，城市的灯火化作了迷离。夏夜的泪水洗濯着大地，守护等待着你的身影越来越清晰。</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2018 </tag>
+            
+            <tag> sketch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于“旅居”</title>
+      <link href="/travel/sojourn/"/>
+      <url>/travel/sojourn/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>把旅居当做人生梦想是数年前的春天，那会儿梦想着成为文学少年，闲暇时写点文章，也能够周游各国，但求有这番雅趣倒好，可年纪的增长也使自己逐渐认清了现实，不行不行。</p><p>不过，旅居的梦想倒却是有好好地保留下来。</p><p>“旅居”一词，起初是在一些画家，作家的生平概览中看到的，多半描述为“生前曾旅居巴黎”</p><p>亦或是，“先后在日本，美国学习工作，结婚后才结束了旅居的生活。”这种容易令人心生向往的句子，在每一本书的折页都屡见不鲜，每每看见便想着如果有一天能够这样做自我介绍，应当是一件非常值得骄傲的事情。</p><p>问及旅居具体的内容时，可能只会说：“读了些书，拍了点照片，闲暇的时候在郊外的田野走走，天空很蓝，花草很美，食物不算佳肴但足以饱腹。”</p><p>呵，多么乏味的故事。</p><p>但我还是宁愿接受这样的说法，也许一直希望自己能够拥有某种特定的生活状态，全都包含在了“旅居”这两个简单且复杂的汉字里，除此之外，实在找不到恰当的替代。</p><p>不过，那究竟是种怎样的状态呢？</p><p>想起从德国回来后，放下行李箱，稍微收拾后就直接回到了原来生活的轨迹，没有整理照片，没有像往常一样写游记，平淡地就好像看了一个月的长篇小说。</p><p>出发不为到达，不管面对的是良辰美景亦或是枯枝败叶，都保持着日常的琐碎，学习看书散步，去到一个陌生的环境里，再去感受本地的乡土人情，直到最后离开时也不带留恋与伤感，就如同，看了场电影罢。</p><p>有点轻浮，随遇而安的味道，说到底，“旅居”看起来无限美好。但本质上不过是逃避的一种罢了，逃避原先宏伟计划的见证者，逃避熟人，逃避电脑，逃避桌子逃避学习，简单点儿说，不过是想偷懒了。</p><p>心中总会有想法，不如明天不去上课，旅居的日子就此开始吧。可是，无论再怎么逃，现实的存在和心的世界似乎一点关系也没有。</p><p>就好比，即使我离你有两千五百公里的路程，而因思恋和回忆，也只相差毫厘而已。</p><p>因为这些愚蠢的思考，时而分不清理想与现实了。</p><p>值得庆幸的是，明早又会在教室吃着粽子配豆奶，擦擦嘴看看窗外的山峦，如果是晴天。开始一天的学习和工作，单纯地继续自己生活的日常。</p><p>旅居？那是何物？管它呢~</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> travel </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> travel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>相濡以沫，不如相忘于江湖</title>
+      <link href="/repost/zhuang_thought_1/"/>
+      <url>/repost/zhuang_thought_1/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>该文转自<a href="https://www.zhihu.com/question/19945036/answer/92055898" target="_blank" rel="noopener">「知乎」</a></p><h2 id="相濡以沫，不如相忘于江湖"><a href="#相濡以沫，不如相忘于江湖" class="headerlink" title="相濡以沫，不如相忘于江湖"></a>相濡以沫，不如相忘于江湖</h2><blockquote><p>泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖</p></blockquote><p>钱穆先生认为：此欲人两忘生死耳。</p><p>从<a href="https://ctext.org/zhuangzi/great-and-most-honoured-master/zhs" target="_blank" rel="noopener">《大宗师》篇</a>这一段的角度来看，我个人很是赞同。其实，庄子不过以此作喻，本身具有极强的意味。</p><p>我个人认为，庄子所谓相濡以沫与相忘江湖都有一个很大的前提是关于<strong>泉涸</strong>。</p><p>如果没有<strong>泉涸</strong>的前提，也就不存在后面的内容。<strong>泉涸</strong>意指内容非常广泛，可以为我们所在意的爱情，也可以是工作，甚至可以是任何事情。<br>不用去追究一个明确的答案，是因为，这一切都涵盖在了人的生与死。我们的爱恨也好，生死也好，都是在有了<strong>泉涸</strong>这一条件下完成的。</p><p>如果我们每天幸福，何苦要有一个相濡以沫还是相忘江湖的选择，我们大可以选择开心和快乐。但是，正因为“<strong>泉涸</strong>”，我们才会去思考，到底怎么去做更好。</p><p>庄子不过只是给了我们一个参考答案而非标准答案。我个人认为，庄子的高妙在于他将尘世的许多可能抽象为了生与死，比喻为<strong>泉涸</strong>之鱼。</p><h2 id="乘物以游心"><a href="#乘物以游心" class="headerlink" title="乘物以游心"></a>乘物以游心</h2><p>个人认为，“乘物以游心”的自由才是最根本的答案。</p><p>康德在《实践理性批判》发展了卢梭关于自由的解释：</p><blockquote><p>自由不是你想做什么就做什么，而是你不想做什么就不做什么。</p></blockquote><p>在这一点上，我觉得二者有着相似之处。我们所做的一切都是内心的选择，虽然事前，我们并不知道这样的选择是对还是错，甚至很多时候无法断定正确与否。</p><p>而庄子的这段话，我认为意义相关。无论是相濡以沫还是相忘江湖都是彼此的自由意志，我们承担选择的后果。我想，两条鱼靠着这不多的唾沫能天荒地老也是很好的事情，但很显然，这不可能。</p><p>庄子进而补充，可能更好的相处是相忘江湖，即使彼此忘记，但也依然可以有更多的时间去活下去。有人认为，可以如花火般活一场、爱一场或者达到某种人生巅峰，也是很好的。</p><p>也有人认为，为了彼此，踏上不同的道路过更好的生活，彼此离开也是一种极致的选择。我认为，无论哪种理解，都有足够充分的理由。</p><h2 id="生与死"><a href="#生与死" class="headerlink" title="生与死"></a>生与死</h2><p>就生与死而言。人们对此的理解太多，就我自己来讲，很多时候生与死就是人生，没有什么比生与死更令人叹息的事情。</p><p>海德格尔说，<strong>向死而生</strong>。</p><blockquote><p>Sein zum Tode.</p></blockquote><p>其实没有庄子看的透彻，庄子讲得更抽象。</p><p>因为无论生或死，都是一种状态，生意味着相濡以沫，也意味着相忘江湖，死亦然。</p><p>不能为了生而生，也不能为了死而死。生死也好，爱憎也好，我们都坦然相对，不刻意去爱去恨，不极力去生去死。</p><h2 id="爱是放手，爱是坚持"><a href="#爱是放手，爱是坚持" class="headerlink" title="爱是放手，爱是坚持"></a>爱是放手，爱是坚持</h2><p>有人讲，爱是放手，有人说爱是坚持。</p><p>相濡以沫诚然是我爱你，相忘江湖也是我爱你。在这个微微有些冰冷的现实世界，我们渴望爱与被爱，我们因两条鱼的故事，去思想，去感动。</p><p>记得以前有一个网络作家叫南康，为爱而死。我想这就是所谓的相忘江湖，正所谓“情不知所起，一往而深，生者可以死，死可以生。”</p><p>既然无法与你相濡以沫，那就让我们彼此相忘于江湖吧。多么感人的故事，但却也让人遗憾。</p><p>真正的矢志不渝是什么？我想应该是不论对方如何、是否在一起，我都在心里永远保留你专属的位置，不会时常想起，却也一直保存你独家的记忆。</p><p>再说其他。</p><p>有时候我们对待事业也是如此，我们常常陷入一片沼泽，越是挣扎越是陷入其中，努力营造一种自我努力，自我反抗的氛围，实际上，有时候更陷入不自由的状态。</p><p>而当我们于此和解，不再急功近利，反而会海阔天空。就像考试，比如高考，考出高的分数是目标，却并不是学习的目的。相忘与相守在这一点上也是如此。</p><p>只有于此释然，才能更自由地去学习，当然坚守从功利角度说，也没有错，人在世界，全然不功利，人类对社会的建设还有什么意义。</p><h2 id="所以"><a href="#所以" class="headerlink" title="所以"></a>所以</h2><p>我认为，相濡以沫和相忘江湖都是一种选择，这个选择无关好与坏，关乎的不过是内心的自由意志。</p><p>很多时候，我们越是纠结，结果越是可悲。我觉得，真正的成全应该是对自己的，也是对彼方的，无论怎么选择，都不会后悔，即使有太多遗憾。</p><p>忘记爱与不爱、忘记成功或是失败，忘记生存或是死亡，自然的存在，自由的选择，自在的成长，享受这一切的痛苦与美好才是人生的意义。</p><p>最后，想征引尼采的一句话作为结束：生命的开始便是迈向死亡的一连串苦难的过程，然后，我们克服一切，重新再来一次，这就是生命。</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> repost </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> repost </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一个梦</title>
+      <link href="/sketch/a_dream/"/>
+      <url>/sketch/a_dream/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>地球的神龙，只能许一个愿望，我觉得不行，许愿把那美克星的神龙叫来，于是又能许三个愿望。</p><p>这次我不再贪心，我先请求他让世界上所有恶心的昆虫消失，再给所有的公共洗衣机都加上使用前消毒杀菌的功能。</p><p>他满口答应，眼睛闪烁着亮红色的光芒，问最后一个愿望，我没有犹豫，希望每天早上都能有早茶放在桌上。</p><p>神龙摇头，太复杂了，早茶种类太多，让换一个，我抿了抿嘴，好想再吃一次正宗的粤菜。</p><p>“菜名。”</p><p>“<a href="https://baike.baidu.com/item/%E6%89%93%E8%BE%B9%E7%82%89/8721948" target="_blank" rel="noopener">打边炉</a>。清水一锅煮沸，两斤草鱼双飞切片，菜心软，头抽，配干水姜丝。”，金光闪现，桌上摆着点好的菜。</p><p>“好好享用，你的愿望全都实现了。”</p><p>我邀请他共进晚餐。<br>“倒也不是不行。”</p><p>高大的神龙变成了人形。天空也恢复了原来的颜色，暗淡起来。<br>“唔…好厉害。”</p><p>“实现自己的愿望也是我的能力之内。”</p><p>水开后，夹着鱼片开涮，左右各一，鱼片半熟。 轻点头抽，姜丝上味， 入口。 再涮菜心。</p><p>“鱼不能太大，太大肉不够嫩，影响口感。 开水不能放任何佐料，否则会影响鱼片本身的鲜味。 涮完鱼再涮菜心，也是这个道理。</p><p>粤菜是依赖食材的，不同于川菜或其它，有些人觉得不止于此，但我认为是所谓对食材的尊重，真正的原味。”</p><p>醒来，桌上的早茶落了空，在阳台的边角又看见了令人厌恶的<a href="https://baike.baidu.com/item/%E6%A4%BF%E8%B1%A1/416840" target="_blank" rel="noopener">椿象</a>，楼下的寝室公共洗衣机照例是如此，只是在梦中又一次想起了粤菜那恍惚的味道，或许与那个恍惚的夏天有关。</p><hr><p>“下一站，华强路。华强路，左边嘅车门将会打开，请小心列车与站台之间的空隙。”</p><p>我原本打算用粤菜讨得神龙欢心，但神龙到底是神龙，不寄情于世事事物，更不在乎吃吃喝喝。</p><p>其实吧，我也不在乎，但虫子吓人，衣服会变脏，人会饿，得杀，得洗，得吃。</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> kirai </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>食べ物</title>
+      <link href="/sketch/essen/"/>
+      <url>/sketch/essen/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<hr><h2 id="疑问？"><a href="#疑问？" class="headerlink" title="疑问？"></a>疑问？</h2><p>当被问及有关食物的话题，我向来是没什么兴趣回答的，每次也用「不错还行~」搪塞过去，然而这并不是敷衍，因为食物之于我来说，无非便是用来填饱肚子，并且不会让我有难以下咽，味同嚼蜡之感，因此 每每去何地游玩时，金拱门或是开封菜便成了我的不二之选，首先，其售卖的食物质量也比较稳定，相比之下路旁街边的特色小吃对于我来说可能就毫无吸引力了，人对于未知常常都是恐惧的。因而常常被人吐槽，你不懂生活，你不会享受！</p><p>所以必须阐述下。</p><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>美味的食物确乎是恩赐，但我所认为的美食的享受，更多地是在于环境亦或是心境~ 在暹粒的吴哥窟日出时的面包，那是好吃的。在从泰戈尔机场门口后尝到的咖喱香肠，那是好吃的。在比利时的边陲小镇点上一份冰淇淋甜筒望着逐渐下沉的破碎残阳，那也是好吃的。</p><p>而平时的早中午三餐，若不是用以维系生命，说实话~ 我都不太乐意去吃，这么说可能会让人嗤之以鼻，但于我事实如此，因此在被问及有关食物的质量，色香味之时，我都略显局促。</p><p>因为，眼前的食物在我看来并没有任何优点，也没有任何缺点，单单只是维持生命存在的必须品，我不在乎它的冷热甜咸，亦或是用料是否考究，仅仅想吃掉它，以完成人类的嘴巴以及它被赋予的应有的使命。</p><p>对于食物，就是这种情感而已罢~</p><p>不管做任何事，我更在意的是在这样一种环境里，是否能感到舒坦，或者是一种能够油然而生的浪漫。那是我个人热衷的享受生活的固定程式。</p><p>所以呢~ 你如果要问我好不好吃，结果却得到还不错，还行诸如此类答案，那一定不是<del><strong>敷衍</strong></del>哦~~</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> kirai </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>月亮是红色的</title>
+      <link href="/sketch/red_moon/"/>
+      <url>/sketch/red_moon/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>喜欢写，总企图写，不见得完全是好事，依赖上了的话，不值一提的内容都想用笔记录下来，<br>一边琢磨词句，直到情绪从“啊啊啊！”，变成“风经过缝隙发出各种声音，总以为是动物，夜路有一点渗人。”。</p><p>从“好看！”变成“前几晚月亮是红色的，想拍下来，无赖手机相机都拍不出来，我不相信自己的眼睛了，当然也不相信相机。”。</p><p>本来可以发一条微博说“现在月亮是红色的哦~”。</p><p>简单的表达，却总想把它用华而不实的辞藻包装起来，于是，写文字到我这儿就变得复杂了起来。</p><p><a href="https://cdn.pixabay.com/photo/2020/02/19/17/19/blood-moon-4862724_960_720.jpg" class="gallery-item"><img src="https://cdn.pixabay.com/photo/2020/02/19/17/19/blood-moon-4862724_960_720.jpg" alt=""></a></p><br/>再就是，文字永远不会反驳，当我说“月亮是红色的。”<blockquote><p>文字默不作声。</p></blockquote><p>但如果我同谁说，可能会收到“拍给我看看。”，我说“不。”，“你骗人，月亮根本不是红色的。”</p><p>“没。”</p><p>文字是自己和自己的社交，久而久之，不会反驳的他让我固化了对世界的认知，已经有点不正常的时候，还觉得自己正独醒着。</p><p>当然不怪那些词句，文字记录是梳理思想的过程，不是隔离外界的工具。<br>我想更好的结果是发了“月亮是红色的，拍不出来，说给你听。”<br>可能收到的回复是“自然现象，大气层折射了红色的光，不过不常见，一般是要上新闻的，我想你是眼睛太累了，好好休息。”</p><p>“噢。”</p><p>真是贪得无厌啊。</p><p>不过如果每每这样合乎情理的回复，文字记录那一边，又不知道会是些什么内容了。</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生日快乐唱给自己听</title>
+      <link href="/sketch/happy_birthday/"/>
+      <url>/sketch/happy_birthday/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<hr><h2 id="🎂"><a href="#🎂" class="headerlink" title="🎂"></a>🎂</h2><div class="aplayer" data-id="298194" data-server="netease" data-type="song" data-mode="single"></div><p>对于年龄的增长或是时光的逝去，无论是何时想起都是颇为畏惧的。</p><p>现在恐惧，是因为是一直赖以推卸理由的“我还小呐”，恐怕是再也不能用了。</p><p>将来恐惧，大抵是没能幸福地活着，再回忆起过去那些快乐的日子，难免也是充满自责与愧疚的。</p><p>当然，这样的想法太悲观了，虽然乐意一直往坏的方向想，但对于大多数人来说，年龄的增长意味着去迎接更多的挑战和追求更美好的生活，只是那样斗志昂扬的话，“努力！奋斗”，亦或是自欺式的“你行的，你可以”，无论如何我不想再说了。</p><p>仔细回忆这几年，最大的变化，无非就是变得负能量了。现在很难再心静自然凉了。</p><p>二十岁，或者是说，马上就要三十了。是不是应该以此为契机做一些以前做不到的事情呢，我常不怀好意地这样想着。</p><p>但事实是，今天再平凡不过，坐在乏味的课堂上，差一点又睡着了，不想把光阴浪费在无聊繁琐的矩阵计算上，便专注地望着窗外雾中的山峦，在备忘录里浏览数年前写下的青涩而又矫情的文字。</p><p>这会儿是回忆过去的绝佳时刻，所以今天一定不要拿出该死<a href="https://www.testdaf.de" target="_blank" rel="noopener">德福</a>的口语题，哪怕离考试只剩十六天。尽情沉浸在思恋与回忆的逆旋中，开始享受，好好享受。</p><p>不管怎样，不论怎样。</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> birthday </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>心鸟号：新年好！</title>
+      <link href="/sketch/happy_new_year_2017/"/>
+      <url>/sketch/happy_new_year_2017/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<hr><h2 id="最近与未来"><a href="#最近与未来" class="headerlink" title="最近与未来"></a>最近与<del>未来</del></h2><p>想自由，向前进，想做不违心的事，想说真心的话，但。</p><p>但…</p><p>在有限的人生里，“但”正积极地为我们转折。</p><p>年轻啊，情绪饱满，常在白昼高歌，常在夜晚呢喃。</p><p>把目光停留在了可爱的事物上，营养均衡，爱喝蔬菜汁，喝柠檬茶，吃鸡胸肉。</p><p>瞅瞅又咻咻，唱起歌来，在檐上遇到，再短的时间，也会想表白。</p><p>它伫立在冬季大三角下，那是路过的银河。</p><p>最近，身边的人儿，一个在晚上喝咖啡，睡不着了，一个和妈妈在街上买了漂亮的裙子，还有的，滴滴眼药水，涂涂唇膏，也差不多进入了节日的气氛。</p><h2 id="对联"><a href="#对联" class="headerlink" title="对联"></a><strong>对联</strong></h2><p><text class="dui-lian">阖家团圆辞岁去</text><text class="dui-lian">金鸡报晓迎春来</text></p><h2 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a><strong>新年快乐</strong></h2><p>emoji居然有这么多种🐤，🐥，🐣，🐔，🐓，🦃 神奇！</p><p>鸡年快乐！</p></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> sketch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 2017 </tag>
+            
+            <tag> blessing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>窗边的教室</title>
+      <link href="/gallery/classroom/"/>
+      <url>/gallery/classroom/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="/libs/lightgallery/src/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🐺 HuaWei Mobile Phone.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 739.956px;">    <a href="https://s1.ax1x.com/2020/04/17/JEMMo4.jpg" title="" src=" class="gallery-item"><img alt="" src="https://s1.ax1x.com/2020/04/17/JEMMo4.jpg"/></a>        <a href="https://s1.ax1x.com/2020/04/17/JEMKwF.jpg" title="" src=" class="gallery-item"><img alt="" src="https://s1.ax1x.com/2020/04/17/JEMKwF.jpg"/></a>    <a href="https://s1.ax1x.com/2020/04/17/JEMueU.jpg" title="" src=" class="gallery-item"><img alt="" src="https://s1.ax1x.com/2020/04/17/JEMueU.jpg"/></a>    <a href="https://s1.ax1x.com/2020/04/17/JEMeyV.jpg" title="" src=" class="gallery-item"><img alt="" src="https://s1.ax1x.com/2020/04/17/JEMeyV.jpg"/></a></div></div><script src="/libs/lightgallery/src/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> gallery </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 吉安一中 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
