@@ -92,7 +92,7 @@ $(document).ready(function() {
   /**
    * pangu
    */
-  //pangu.spacingPage();
+  pangu.spacingPage();
 
   /**
    * Shows the responsive navigation menu on mobile.
