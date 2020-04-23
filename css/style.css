@@ -1824,6 +1824,30 @@ code {
 	src: local("HYChengXingJ"), url(../libs/HY/HYChengXingJ.ttf) format("truetype")
 }
 
+@font-face {
+	font-family: "HanyiSentyYongleEncyclopedia";
+	font-style: normal;
+	src: local("HanyiSentyYongleEncyclopedia"), url(../libs/HY/HanyiSentyYongleEncyclopedia.ttf) format("truetype")
+}
+
+@font-face {
+	font-family: "HYChangLiSongKeBen";
+	font-style: normal;
+	src: local("HYChangLiSongKeBen"), url(../libs/HY/HYChangLiSongKeBen.ttf) format("truetype")
+}
+
+@font-face {
+	font-family: "HYGuLiW";
+	font-style: normal;
+	src: local("HYGuLiW"), url(../libs/HY/HYGuLiW.ttf) format("truetype")
+}
+
+@font-face {
+	font-family: "HYPingAnXingCuF";
+	font-style: normal;
+	src: local("HYPingAnXingCuF"), url(../libs/HY/HYPingAnXingCuF.ttf) format("truetype")
+}
+
 .content .dui-lian {
 	font-family: "HYChengXingJ"; 
 	font-size: 50px;
@@ -1833,6 +1857,39 @@ code {
 	max-width: 100%;
 	height: auto;
 	text-align: center;
+}
+
+.content .classical_chinese_title {
+	font-family: "HYGuLiW";
+	font-size: 50px;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.content .classical_chinese_author {
+	font-family: "HYChangLiSongKeBen";
+	font-size: 20px;
+	display: block;
+	height: auto;
+	text-align: center;
+
+}
+
+.content .classical_chinese_content {
+	font-family: "HYChangLiSongKeBen";
+	font-size: 30px;
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+.content .classical_chinese_content sup {
+	font-family: "HYPingAnXingCuF";
+	font-size: 18px;
+	margin: 1px;
+	display: inline-block;
 }
 
 kbd {
@@ -1856,4 +1913,10 @@ kbd {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+.content .under_dash{
+	border-bottom:1px dashed #383838;
+
+}
 /* rebuild by neat */
