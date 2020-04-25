@@ -568,6 +568,7 @@
 html {
 	height: 100%;
 	border-top: 0 solid #383838;
+	zoom: normal;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%
 }
@@ -1918,5 +1919,23 @@ kbd {
 .content .under_dash{
 	border-bottom:1px dashed #383838;
 
+}
+
+.content .border-radius-2 {
+	box-shadow: 5px 10px 18px #888888;
+	border-radius:2%;
+	overflow: hidden;
+	height: 600px;
+}
+
+.content .border-radius-3 {
+	box-shadow: 5px 10px 18px #888888;
+	border-radius:2%;
+	overflow: hidden;
+	height: 550px;
+}
+
+iframe {
+	
 }
 /* rebuild by neat */
