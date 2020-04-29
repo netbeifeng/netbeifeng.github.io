@@ -1341,6 +1341,7 @@ article .content .video-container object {
 }
 
 article .content blockquote {
+	/* font-family: Arial, Helvetica, sans-serif; */
 	margin: 1rem 10px;
 	padding: .5em 10px;
 	background: inherit;
@@ -1875,7 +1876,14 @@ code {
 	display: block;
 	height: auto;
 	text-align: center;
+}
 
+.content .classical_chinese_preface {
+	font-family: "HYChangLiSongKeBen";
+	font-size: 18px;
+	display: block;
+	height: auto;
+	text-align: center;
 }
 
 .content .classical_chinese_content {
@@ -1942,16 +1950,18 @@ iframe{
 .tips {
 	font-family: "HYGuLiW";
 	width: 18px;
-    height: 32px;
+    height: 36px;
     line-height: 16px;
     float: left;
     display: block;
     border-radius: 36px;
     font-size: 14px;
     text-align: center;
-    margin-left: -32px;
+	margin-left: -44px;
+
 	/* padding: 3px 0; */
 	padding-bottom: 30px;
+	padding-left: 1px;
     font-weight: normal;
 }
 
