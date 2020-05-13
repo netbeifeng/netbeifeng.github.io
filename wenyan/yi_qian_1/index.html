@@ -93,19 +93,19 @@
         <div id="share" style="display:none">
             <ul>
     <li><a class="icon"
-            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/REST_and_Servlet/"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/wenyan/yi_qian_1/"
             rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="https://twitter.com/share?url=http://alias.zone/tech/REST_and_Servlet/&amp;text=浅谈 RESTful 与 Servlet"
+            href="https://twitter.com/share?url=http://alias.zone/wenyan/yi_qian_1/&amp;text=周易：乾卦"
             rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/REST_and_Servlet/&amp;title=浅谈 RESTful 与 Servlet"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/wenyan/yi_qian_1/&amp;title=周易：乾卦"
             rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="mailto:?subject=浅谈 RESTful 与 Servlet&amp;body=Check out this article: http://alias.zone/tech/REST_and_Servlet/"
+            href="mailto:?subject=周易：乾卦&amp;body=Check out this article: http://alias.zone/wenyan/yi_qian_1/"
             rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </li>
 </ul>
@@ -118,10 +118,10 @@
 <div class="content index my4">
     <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
     <header>
-        <h1 class="posttitle" itemprop="name headline">浅谈 RESTful 与 Servlet</h1>
+        <h1 class="posttitle" itemprop="name headline">周易：乾卦</h1>
         <div class="meta">
             <div class="postdate">
-                <time datetime="Tue Apr 21 2020 17:57:10 GMT+0200" itemprop="datePublished"> 2020-04-21</time>
+                <time datetime="Sun Oct 20 2019 07:24:01 GMT+0200" itemprop="datePublished"> 2019-10-20</time>
                 
                 
                 
@@ -133,14 +133,21 @@
                     
                         <i class="fas fa-tag"></i> 
                     
-                    <a class="tag-link" href="/tags/2020">2020</a>
+                    <a class="tag-link" href="/tags/2019">2019</a>
                 </div>
                 
                 <div class="article-tag">
                     
                         <i class="fas fa-tag"></i> 
                     
-                    <a class="tag-link" href="/tags/backend">backend</a>
+                    <a class="tag-link" href="/tags/wenyan">wenyan</a>
+                </div>
+                
+                <div class="article-tag">
+                    
+                        <i class="fas fa-tag"></i> 
+                    
+                    <a class="tag-link" href="/tags/YiJing">YiJing</a>
                 </div>
                 
             </div>
@@ -149,25 +156,93 @@
     
     <div class="content" itemprop="articleBody">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr>
-<p>今天Web-Tech课发了第一个项目作业，其中提到后端使用REST Service，对这个名词很熟悉，但对于后端开发只接触过古早的Servlet。</p>
-<p>本身这个比较是个伪命题，因为</p>
-<ul>
-<li>RESTful Service是一个软件架构“风格”，</li>
-<li>而Servlet是Java 服务端的一种技术<br>之所以把它们拿出来比较，是由于它们代表了两个时代的技术风格与架构。下面就来阐述这两种技术架构的区别。</li>
-</ul>
-<p>Servelt API是1998年发布的，它的核心API一直变化不大，非常稳定，也是JavaEE众多API中最成功的一个。基于Servlet API产生了众多的框架，比较大家最熟悉的Structs，Spring MVC等。和REST对比，它们有如下特征：</p>
-<ul>
-<li>它们的核心理念是servelt与handler之前的一个Mapping，利用一个配置文件（Spring MVC可以是Annotation式的配置）来处理Servlet和Handler之间的Mapping关系。</li>
-<li>Servlet具有Session状态，这也方便了服务器端实现一些带状态的逻辑。但同时这样也导致了Servlet实现多服务器的架构带来了困难，就必须实现复杂的负载均衡、Session复制、持久化机制。</li>
-<li>Servlet获取客户端信息的方式更多的是通过Request Parameters。想想你经常通过getParamter就可以明白。</li>
-</ul>
-<p>相对于Servlet，RESTful更多的是一种架构方式的改进，它强调以下几点：</p>
-<ul>
-<li>通过请求URL来获取信息，路径即是信息，这也是HTTP的核心理念。</li>
-<li>无状态，状态转而通过应用层或者数据库层来维护。</li>
-<li>通过http的POST, DELTE, PUT, GET等方式来实现数据的增删改查。而不再是借以前servlet中我们经常定义的通过方法名来区别各个方式，比如getXXXByXXX，updateXXX等等。</li>
-</ul>
-<p>References:<br>[1]: <a href="http://stackoverflow.com/questions/7874695/servlet-vs-restful" target="_blank" rel="noopener">http://stackoverflow.com/questions/7874695/servlet-vs-restful</a><br>[2]: <a href="http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html" target="_blank" rel="noopener">http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html</a></p>
+<div id="bagua_svg">
+    <svg name="qian" width="50px" height="50px" viewBox="0 0 100 100">
+        <g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)">
+            <path fill="#DA251D" d="M0,945v-55h500h500v55v55H500H0V945z"/>
+            <path fill="#DA251D" d="M0,770v-50h500h500v50v50H500H0V770z"/>
+            <path fill="#DA251D" d="M0,590v-50h500h500v50v50H500H0V590z"/>
+            <path fill="#DA251D" d="M0,410v-50h500h500v50v50H500H0V410z"/>
+            <path fill="#DA251D" d="M0,230v-50h500h500v50v50H500H0V230z"/>
+            <path fill="#DA251D" d="M0,55V0h500h500v55v55H500H0V55z"/>
+        </g>
+    </svg>
+</div>
+<text class="name_of_gua"> 「乾」卦一 - 吉人自有天相</text>
+
+
+<div class="tips tips_org">原文</div>
+
+<div class="org_arti"> (乾下乾上) 
+    <text class="under_dash">乾</text><sup>①</sup>：<text class="under_dash">元亨，利貞</text><sup>②</sup>。
+    <p><text class="under_dash">初九</text><sup>③</sup>：<text class="under_dash">潜龍勿用</text><sup>④</sup>。</p>
+    <p>九二：<text class="under_dash">見龍</text>在田，利見<text class="under_dash">大人</text><sup>⑤</sup>。</p>
+    <p>九三：君子終日<text class="under_dash">乾乾</text><sup>⑥</sup>，<text class="under_dash">夕惕</text>若<text class="under_dash">厲</text>，無<text class="under_dash">咎</text><sup>⑦</sup>。</p>
+    <p>九四：<text class="under_dash">或躍在淵</text>，無咎<sup>⑧</sup>。</p>
+    <p>九五：<text class="under_dash">飛龍</text><sup>⑨</sup>在天，利見大人。</p>
+    <p>上九：<text class="under_dash">亢</text>龍有悔<sup>⑩</sup>。</p>
+    <p><text class="under_dash">用九</text><sup>⑪</sup>：見<text class="under_dash">群龍</text>無首<sup>⑫</sup>，吉。</p>
+</div>
+
+<div class="tips tips_com">注釋</div>
+
+<div class="com_arti">
+① 乾是本卦標題。乾指北斗星，用來代表天。本卦的内容主要與天有關。
+<hr/>
+<p>② 元亨、利貞是兩個表示吉祥的貞兆辭，表明是兩個吉占。元亨的意思約等於大吉。利貞的意思是吉利的貞卜。</p>
+<hr/>
+<p>③ 初九：是本卦第一爻名稱，以下「九二」、「九三」等也是。「九」代表陽爻
+<svg width="30px" height="10px" viewBox="0 0 100 11">
+<g>
+    <path fill="#DA251D" d="M0,5.5V11h50h50V5.5V0H50H0V5.5z"/>
+</g>
+</svg> ，「六」代表陰爻 <svg width="30px" height="10px" viewBox="0 0 100 11">
+<g>
+    <path fill="#007CC3" d="M0,5.5V11h22.5H45V5.5V0H22.5H0V5.5z"/>
+    <path fill="#007CC3" d="M55,5.5V11h22.5H100V5.5V0H77.5H55V5.5z"/>
+</g>
+</svg> 。一個卦畫由六爻組成，從下向上排列，依次用初、二、三、四、五、上表示，如「六三」、「上六」、「九二」、「上九」等。它們都是表示爻的陰陽性和排列順序的名稱。</p>
+<hr/>
+<p>④ 潜龍：指秋分時的龍星。性和排列順序的名稱。勿用：不利。</p>
+<hr/>
+<p>⑤ <ruby><rb>見</rb><rp>(</rp><rt>xiàn</rt><rp>)</rp></ruby>：出現。龍：龍星。田：天田。大人：指王公貴族。</p>
+
+<p>⑥ 君子：指有才德的貴族。乾乾：勤勉努力。</p>
+<hr/>
+<p>⑦ 夕：夜晚。惕：敬懼。厲：危險。咎；過失，灾難。</p>
+<hr/>
+<p>⑧ 或：有人，指貴族。躍在淵：跳進深潭。</p>
+<hr/>
+<p>⑨ 飛龍；龍星。</p>
+<hr/>
+<p>⑩ 亢：龍升騰到極高處的龍星。有悔：不吉利的占筮。</p>
+<hr/>
+<p>⑪ 用九：乾卦特有的爻名。《易經》的乾卦和坤卦都多一爻(坤卦为「用六」，專門表示這兩卦是全陽、全陰。「用九」表示乾卦的全陽爻將盡變为全陰爻。</p>
+<hr/>
+<p>⑫ 群龍：卷龍。龍蜷曲起來就見不到頭。</p>
+</div>
+
+<div class="tips tips_tran">譯文</div>
+
+<p>乾卦：大吉大利，吉祥的占卜。</p>
+<p>初九：龍星秋分時潛隱不見，不吉利。</p>
+<p>九二：龍星出現在天田星旁，對王公貴族有利。</p>
+<p>九三：有才德的君子整天勤勉努力，夜裡也要提防危險，但最終不會有災難。</p>
+<p>九四：有些大人君子跳進深潭自殺，並不是他們本身的過失。</p>
+<p>九五：龍星春分時出現在天上，對王公貴族有利。</p>
+<p>上九：龍星上升到極高的地方，是不吉利的徵兆。</p>
+<p>用九：捲曲的龍見不到頭，是吉利的兆頭。</p>
+<hr>
+<div class="tips tips_exp">題解</div>
+
+<p>把天上的星象同人間世事的吉凶聯系起來，對此作出帶有某種神秘色彩的解釋，並且進一步把天象看作神的意志的體現，對天頂禮膜拜，這是中國古人的思維習慣。</p>
+<p>那時沒有天文望遠鏡，沒有相關的科學知識(在西方，這方面的知識和技術到16、17世紀才有較大發展)，按古人的思維習慣，絕不可能把頂禮膜拜的對象當作認識、研究和探索的對象。</p>
+<p>在今天看來簡單明了的自然現象，對古人來說意義卻非同尋常。</p>
+<p>神的意志通過自然現象表現出來，便成為對人的行為舉止的啟示。大凡自然界和人類社會中超出人們想像力和理解力的事物，都可以按這種「天人感應」的思路來解釋。</p>
+<p>這樣一來，人們的行為舉止就有了依據。掌握著財富、權力、知識的王公貴族需要這樣，普通的平民百姓也需要這樣。</p>
+<p>天文望遠鏡早把自然奧秘和神的實質看透了，但人在現實生活甲需要某種精神支撐，卻是天文望遠鏡無法解決的問題。</p>
+<p>我們大可不必再像古人那樣信奉「天人感應」的教條，也不信上天只對「大人」、「君子」顯靈。</p>
+<p>然而，好人得好報，上天保姑善良的好人們，恐怕是許許多多善良的普通人寧可堅信的理想吧！從這個意義上來理解「吉人自有天象」，不也很好嗎？</p>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -202,19 +277,19 @@
         <div id="share-footer" style="display:none">
             <ul>
     <li><a class="icon"
-            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/REST_and_Servlet/"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/wenyan/yi_qian_1/"
             rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="https://twitter.com/share?url=http://alias.zone/tech/REST_and_Servlet/&amp;text=浅谈 RESTful 与 Servlet"
+            href="https://twitter.com/share?url=http://alias.zone/wenyan/yi_qian_1/&amp;text=周易：乾卦"
             rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/REST_and_Servlet/&amp;title=浅谈 RESTful 与 Servlet"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/wenyan/yi_qian_1/&amp;title=周易：乾卦"
             rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="mailto:?subject=浅谈 RESTful 与 Servlet&amp;body=Check out this article: http://alias.zone/tech/REST_and_Servlet/"
+            href="mailto:?subject=周易：乾卦&amp;body=Check out this article: http://alias.zone/wenyan/yi_qian_1/"
             rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </li>
 </ul>

@@ -22,7 +22,7 @@
     <title>
         Alias x Blog
     </title>
-    <link rel="stylesheet" href="/libs/font-awesome/css/fontawesome-all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/libs/justifiedgallery/justifiedGallery.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
     
@@ -72,6 +72,9 @@
                 class="fas fa-chevron-up" aria-hidden="true"
                 onmouseover="$(&quot;#i-top&quot;).toggle()"
                 onmouseout="$(&quot;#i-top&quot;).toggle()"></i></a></li>
+    <li><a class="icon"><i class="fas fa-book-open" id="read-btn" aria-hidden="true"
+                    onmouseover="$(&quot;#i-read&quot;).toggle()"
+                    onmouseout="$(&quot;#i-read&quot;).toggle()"></i></a></li>            
     <li><a class="icon"><i class="fa fa-sun" id="dark-btn" aria-hidden="true"
                 onmouseover="$(&quot;#i-dark&quot;).toggle()"
                 onmouseout="$(&quot;#i-dark&quot;).toggle()"></i></a></li>
@@ -83,6 +86,7 @@
             <span id="i-prev" class="info" style="display:none">Previous post</span> 
             <span id="i-next" class="info" style="display:none">Next post</span>
             <span id="i-top" class="info" style="display:none">Back to top</span> 
+            <span id="i-read" class="info" style="display:none">Read Mode</span>
             <span id="i-dark" class="info" style="display:none">Switch mode</span> 
             <span id="i-share" class="info" style="display:none">Share post</span>
         </span><br>
@@ -248,6 +252,20 @@ onclick="$(&quot;html, body&quot;).animate({scrollTop:0},&quot;fast&quot;)"><i
         </div>
     </div>
 </div>
+
+<!-- 
+    
+        <script type="text/javascript">
+        $("a.gallery-item").each(function () {
+                $(this).css("cursor", "default");
+                $(this).attr('href', '#');     //修改<a>的 href属性值为 #  这样状态栏不会显示链接地址  
+                $(this).click(function (event) {
+                    event.preventDefault();   // 如果<a>定义了 target="_blank“ 需要这句来阻止打开新页面
+                });
+            });
+        </script>
+    
+ -->
     <footer id="footer">
     <div class="footer-left">Copyright &copy; 2020 Alias</div>
     <div class="footer-right">
@@ -270,6 +288,7 @@ onclick="$(&quot;html, body&quot;).animate({scrollTop:0},&quot;fast&quot;)"><i
 <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-163835166-1","auto"),ga("send","pageview")</script>
 <script type="text/javascript">function loadDisqus(){var e="netbeifeng";$("#load-disqus").hide(),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//"+e+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)}()}</script>
+
 
 <script src="/libs/justifiedgallery/jquery.justifiedGallery.min.js"></script>
 <script src="/libs/lightgallery/src/js/lightgallery.min.js"></script>

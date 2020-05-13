@@ -1381,7 +1381,7 @@ article .content blockquote footer a:hover {
 
 article .content blockquote footer cite:before {
 	padding: 0 .5em;
-	content: "鈥�"
+	content: "——"
 }
 
 article .content .pullquote {
@@ -1980,6 +1980,11 @@ iframe{
     border: #CD632F solid 2px;
 }
 
+.tips_exp {
+    color: rgb(219, 193, 43);
+    border: rgb(219, 193, 43) solid 2px;
+}
+
 .org_arti {
 	font-family: "HYChangLiSongKeBen";
     text-indent: 2em;
@@ -2015,8 +2020,8 @@ div#bagua_svg {
     line-height: 28px;
     font-weight: normal;
     margin-bottom: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em;
+    /* padding-right: 1em; */
 	border: #eee solid 3px;
 	border-radius: 5px;
     /* border-top: none;
