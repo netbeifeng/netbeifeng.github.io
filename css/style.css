@@ -1743,7 +1743,7 @@ code {
 	color: #919191
 }
 
-.highlight figcaption content: "",
+.highlight figcaption content,
 .highlight figcaption:before {
 	display: table
 }

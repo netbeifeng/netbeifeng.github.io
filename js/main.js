@@ -68,7 +68,7 @@ $(document).ready(function() {
   /**
    * Switch mode
    */
-  $('#read-btn').click(function() {
+  $('#read-btn,#read-mobile').click(function() {
     // $('body').removeAttr("background-color");
     // console.log($('body').attr("style"));
     if($('body').attr("style") == undefined) {
