@@ -1381,7 +1381,7 @@ article .content blockquote footer a:hover {
 
 article .content blockquote footer cite:before {
 	padding: 0 .5em;
-	content: "——"
+	content: "——";
 }
 
 article .content .pullquote {
