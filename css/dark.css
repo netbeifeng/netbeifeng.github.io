@@ -590,6 +590,37 @@ body {
 	flex: 1
 }
 
+.content button#try {
+	-moz-box-shadow: 0 1px 0 rgba(42, 42, 42, .3), 0 2px 2px -1px rgba(42, 42, 42, .5), 0 1px 0 rgba(17, 17, 17, .3) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(42, 42, 42, 0.3), 0 2px 2px -1px rgba(42, 42, 42, .5), 0 1px 0 rgba(17, 17, 17, .3) inset;
+	box-shadow: 0 1px 0 rgba(42, 42, 42, 0.3), 0 2px 2px -1px rgba(42, 42, 42, 0.5), 0 1px 0 rgba(17, 17, 17, 0.3) inset;
+	text-shadow: 0 1px 0 rgba(39, 39, 39, 0.9);
+	background-color: rgb(65, 65, 65);
+	background-image: -webkit-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	background-image: -webkit-linear-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	background-image: -moz-linear-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	background-image: -ms-linear-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	background-image: -o-linear-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	background-image: linear-gradient(top, rgb(53, 53, 53,1), rgb(53, 53, 53,0));
+	border: 1px solid rgb(83, 83, 83);
+	color: rgb(185, 185, 185);
+}
+
+.content button:hover {
+	background-color: rgb(32, 32, 32);
+	color: rgb(209, 209, 209);
+}
+
+.content button:active{
+	background: #292929;
+	position: relative;
+	top: 1px;
+	text-shadow: none;
+	-moz-box-shadow: 0 1px 1px rgba(226, 226, 226, 0.3) inset;
+	-webkit-box-shadow: 0 1px 1px rgba(226, 226, 226, 0.3) inset;
+	box-shadow: 0 1px 1px rgba(226, 226, 226, 0.3) inset;
+  }
+
 .content p {
 	hyphens: auto;
 	-moz-hyphens: auto;
@@ -598,6 +629,7 @@ body {
 }
 
 .content code {
+	background-color: #c9cacc11;
 	hyphens: manual;
 	-moz-hyphens: manual;
 	-ms-hyphens: manual;
