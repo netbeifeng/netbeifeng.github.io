@@ -1993,6 +1993,12 @@ kbd {
 	border-bottom:1px dashed #383838;
 
 }
+.content .border-radius-auto {
+	box-shadow: 5px 10px 18px #888888;
+	border-radius:2%;
+	overflow: hidden;
+	height: auto;
+}
 
 .content .border-radius-2 {
 	box-shadow: 5px 10px 18px #888888;
@@ -2104,4 +2110,7 @@ div#bagua_svg {
     column-rule: 1px solid #E6E6E6;
 }
 
-/* rebuild by neat */
+.dplayer {
+	box-shadow: 5px 10px 18px #888888, 0 0 30px 10px rgba(255,255,255,.7) inset;
+	border-radius:2%;
+}
