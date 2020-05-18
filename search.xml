@@ -62,7 +62,7 @@
       <link href="/tech/REST_and_Servlet/"/>
       <url>/tech/REST_and_Servlet/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr><p>今天Web-Tech课发了第一个项目作业，其中提到后端使用REST Service，对这个名词很熟悉，但对于后端开发只接触过古早的Servlet。</p><p>本身这个比较是个伪命题，因为</p><ul><li>RESTful Service是一个软件架构“风格”，</li><li>而Servlet是Java 服务端的一种技术<br>之所以把它们拿出来比较，是由于它们代表了两个时代的技术风格与架构。下面就来阐述这两种技术架构的区别。</li></ul><p>Servelt API是1998年发布的，它的核心API一直变化不大，非常稳定，也是JavaEE众多API中最成功的一个。基于Servlet API产生了众多的框架，比较大家最熟悉的Structs，Spring MVC等。和REST对比，它们有如下特征：</p><ul><li>它们的核心理念是servelt与handler之前的一个Mapping，利用一个配置文件（Spring MVC可以是Annotation式的配置）来处理Servlet和Handler之间的Mapping关系。</li><li>Servlet具有Session状态，这也方便了服务器端实现一些带状态的逻辑。但同时这样也导致了Servlet实现多服务器的架构带来了困难，就必须实现复杂的负载均衡、Session复制、持久化机制。</li><li>Servlet获取客户端信息的方式更多的是通过Request Parameters。想想你经常通过getParamter就可以明白。</li></ul><p>相对于Servlet，RESTful更多的是一种架构方式的改进，它强调以下几点：</p><ul><li>通过请求URL来获取信息，路径即是信息，这也是HTTP的核心理念。</li><li>无状态，状态转而通过应用层或者数据库层来维护。</li><li>通过http的POST, DELTE, PUT, GET等方式来实现数据的增删改查。而不再是借以前servlet中我们经常定义的通过方法名来区别各个方式，比如getXXXByXXX，updateXXX等等。</li></ul><p>References:<br>[1]: <a href="http://stackoverflow.com/questions/7874695/servlet-vs-restful" target="_blank" rel="noopener">http://stackoverflow.com/questions/7874695/servlet-vs-restful</a><br>[2]: <a href="http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html" target="_blank" rel="noopener">http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html</a></p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr><p>今天Web-Tech课发了第一个项目作业，其中提到后端使用REST Service，对这个名词很熟悉，但对于后端开发只接触过古早的Servlet。</p><p>搜了下二者的区别，发现本身这个比较是个伪命题，因为<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p><ul><li>RESTful Service是一个软件架构“风格”，</li><li>而Servlet是Java 服务端的一种技术<br>之所以把它们拿出来比较，是由于它们代表了两个时代的技术风格与架构。下面就来阐述这两种技术架构的区别。</li></ul><p>Servelt API是1998年发布的，它的核心API一直变化不大，非常稳定，也是JavaEE众多API中最成功的一个。基于Servlet API产生了众多的框架，比较大家最熟悉的Structs，Spring MVC等。和REST对比，它们有如下特征：<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p><ul><li>它们的核心理念是servelt与handler之前的一个Mapping，利用一个配置文件（Spring MVC可以是Annotation式的配置）来处理Servlet和Handler之间的Mapping关系。</li><li>Servlet具有Session状态，这也方便了服务器端实现一些带状态的逻辑。但同时这样也导致了Servlet实现多服务器的架构带来了困难，就必须实现复杂的负载均衡、Session复制、持久化机制。</li><li>Servlet获取客户端信息的方式更多的是通过Request Parameters。想想你经常通过getParamter就可以明白。</li></ul><p>相对于Servlet，RESTful更多的是一种架构方式的改进，它强调以下几点：</p><ul><li>通过请求URL来获取信息，路径即是信息，这也是HTTP的核心理念。</li><li>无状态，状态转而通过应用层或者数据库层来维护。</li><li>通过http的POST, DELTE, PUT, GET等方式来实现数据的增删改查。而不再是借以前servlet中我们经常定义的通过方法名来区别各个方式，比如getXXXByXXX，updateXXX等等。</li></ul><p>References:</p><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">http://stackoverflow.com/questions/7874695/servlet-vs-restful</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
       
       
       <categories>
@@ -251,6 +251,58 @@
     
     
     <entry>
+      <title>卒業旅行</title>
+      <link href="/memory/past_graduate/"/>
+      <url>/memory/past_graduate/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><p>有关玉门老城的照片没有放在这里，想了解请移步文章[春风不度玉门关](http://alias.zone/gossip/the_death_of_yumen_old_city)。</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YWjje0.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjje0.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjLyn.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjLyn.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjOLq.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjOLq.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjqQs.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjqQs.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjHzj.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjHzj.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjvwV.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjvwV.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvSFU.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvSFU.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWv9W4.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWv9W4.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvPSJ.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvPSJ.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWjxoT.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWjxoT.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvpYF.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvpYF.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvFyR.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvFyR.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvEex.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvEex.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvil9.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvil9.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvZTK.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvZTK.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvkO1.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvkO1.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvVw6.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvVw6.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvmFO.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvmFO.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWv8mt.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWv8mt.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvl6A.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvl6A.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvufe.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvufe.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvQld.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvQld.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvG0P.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvG0P.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWxBCD.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWxBCD.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWv1OI.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWv1OI.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvtk8.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvtk8.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvNtS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvNtS.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvJTf.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvJTf.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWvUfg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWvUfg.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 青海 / 甘肃 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>春风不度玉门关</title>
+      <link href="/gossip/the_death_of_yumen_old_city/"/>
+      <url>/gossip/the_death_of_yumen_old_city/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr><h2 id="被遗忘的城市"><a href="#被遗忘的城市" class="headerlink" title="被遗忘的城市"></a>被遗忘的城市</h2><p>在高速下错了出口，就这么一头撞进了时代的尘埃中。<br>玉门市，五十多年以前，这里因油设市。上世纪九十年代末，石油产量枯竭，这座单一资源发展路线的城市因此失去生机。市政府和油田基地相继搬离，9万居民弃城外迁，城中弃楼遍地，几成空城。</p><div id="allmap"></div><script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=jQa4aQQGqV7RkgvkomOf5Tc8Zjv4o8MM"></script><script type="text/javascript">    // 百度地图API功能    var map = new BMap.Map("allmap");    // 创建Map实例    map.centerAndZoom(new BMap.Point(108.620, 48.125), 11);  // 初始化地图,设置中心点坐标和地图级别    //添加地图类型控件    map.addControl(new BMap.MapTypeControl({        mapTypes:[            BMAP_NORMAL_MAP,            BMAP_HYBRID_MAP        ]}));          map.setCurrentCity("玉门市");          // 设置地图显示的城市 此项是必须设置的    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放</script><h2 id="一切为了石油"><a href="#一切为了石油" class="headerlink" title="一切为了石油"></a>一切为了石油</h2><p>老城玉门的街道上几乎看不见车，孩子们坐着滑板沿着大路中央划过。走入一座陌生的空城，上世纪八十年代风格的建筑却给你似曾相识感。某种荒诞感油然而生，仿佛倒退行走，一头扎进某个旧日时代。</p><a href="https://s1.ax1x.com/2020/05/18/YfCHAI.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCHAI.jpg"/></a><p>学校的校门大多已经被水泥墙封死，褪色掉漆的“一切为了石油”成了对这个城市的凭吊。</p><a href="https://s1.ax1x.com/2020/05/18/YfCO9f.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCO9f.jpg"/></a><p>拾荒者和看守者是这个城市最后的居民。俱往矣。在我们吃面的小馆，老板说，“几年前这里人还多，最近两年越来越少”。旁边的汽车站，一天进来出去的车也就那么两三班。</p><a href="https://s1.ax1x.com/2020/05/18/YfCjgS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCjgS.jpg"/></a><p>黄金时代落幕后，一部分老玉门人去了几十公里外的新玉门，新建的城市，又一座小城。一部分人去了几十公里外的酒泉。</p><p>或者从哪儿来回哪里去，又或者去了又一座陌生的城市。离开和工作、生存有关，人总离不开要吃一口饭。</p><p>这里的人，为时代的前进做出巨大的贡献，却无改某种程度上被遗忘的命运。他们将青春奉献，可年华老去、资源枯竭后，是否得到应有的回报？</p><a href="https://s1.ax1x.com/2020/05/18/YfCX38.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCX38.jpg"/></a><p>经过车站的时候，它空无一人、原封不动。这曾经熙熙攘攘的往来之地，送来过许多筑梦青年，也带走过无数青春。如今静默伫立，让时间刷上层层包浆。</p><h2 id="请回答，一九八八"><a href="#请回答，一九八八" class="headerlink" title="请回答，一九八八"></a>请回答，一九八八</h2><p>去过很多废弃的房间。如黄金年代人们匆匆而来，没落之后，人们匆匆离开，甚至整个房间还保留从前的模样。在很多房间，物品洒落一堆，主人似乎走得很决绝，很多东西都没有带走，把一切都留在这里。</p><a href="https://s1.ax1x.com/2020/05/18/YfCzuQ.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCzuQ.jpg"/></a><p>令人在意的是几封家书，似乎是兄妹之间的对话，从中可以瞥见一些那个时代的印记。</p><a href="https://s1.ax1x.com/2020/05/18/YfCq4P.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCq4P.jpg"/></a><p>有人调侃这里是中国房价最便宜的地方，这里的房价100元一平米。可真正走来这里，实地看过，你会笑不起来。</p><a href="https://s1.ax1x.com/2020/05/18/YfCbNt.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCbNt.jpg"/></a><p>那些被打破窗户的老楼，风起时发出呼啸，历经劫难，千疮百孔。</p><a href="https://s1.ax1x.com/2020/05/18/YfPSBj.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfPSBj.jpg"/></a><p>青海、甘肃，西北广袤的戈壁里，藏着许多如玉门老城、“原子镇”这样的地方。它们或是石油故城，或因为军工、研究，曾经盛极一时，也在失去功能后被迅速遗忘。人们到来，繁荣它，也废弃它，令它成为后人凭吊过往、凭眺人生的地方。</p><a href="https://s1.ax1x.com/2020/05/18/YfCvjg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YfCvjg.jpg"/></a><p>离开的时候，我看到许多荒草与新坟。那些逝去的人，他们是这个农耕民族里的游牧者，跟随矿藏、资源，一个时代的意志所向。他们在黄金的时代里向阳生长，也在灰暗的时代里自生自灭。</p><p>我看见这些，觉得像你像他，像野草野花，绝望，也渴望，也哭也笑也平凡。</p><h2 id="春风不度玉门关"><a href="#春风不度玉门关" class="headerlink" title="春风不度玉门关"></a>春风不度玉门关</h2><p>电影《山河故人》里，当计划经济的时代过去，大家各自走上逃离的道路。大多人成为时间的坐标，等待被遗忘与彻底朽坏。少数人逃出生天，成为地理与时间上的裂隙。</p><p>两天前，我在玉门老城三百里外的敦煌。那里曾充满灿烂的文化，也在时代过去之后沦为被遗忘者。</p><p>只等在风尘黄沙里，剥落、损朽，直到某一天再从故纸堆里拾起。</p><p>呵，春风不度玉门关。</p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> gossip </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gossip </tag>
+            
+            <tag> 2018 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Take Me Home, Railroad.</title>
       <link href="/sketch/take_me_home_railroad/"/>
       <url>/sketch/take_me_home_railroad/</url>
@@ -270,6 +322,81 @@
             <tag> 2018 </tag>
             
             <tag> sketch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>杭州的四季</title>
+      <link href="/memory/past_hangzhou/"/>
+      <url>/memory/past_hangzhou/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YW1XMd.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW1XMd.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW1zZt.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW1zZt.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW1jsA.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW1jsA.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3SdP.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3SdP.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW1vqI.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW1vqI.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3FzQ.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3FzQ.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3AMj.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3AMj.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3VLn.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3VLn.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3Ci8.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3Ci8.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3pIf.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3pIf.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3iRg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3iRg.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3PJS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3PJS.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3noV.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3noV.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3Ess.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3Ess.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3md0.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3md0.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3MJU.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3MJU.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3QWF.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3QWF.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3KiT.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3KiT.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW3lz4.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW3lz4.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杭州 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>서울 안녕하세요</title>
+      <link href="/memory/past_seoul/"/>
+      <url>/memory/past_seoul/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YWNSds.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWNSds.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtjsg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtjsg.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtvLQ.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtvLQ.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtzZj.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtzZj.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWNpon.png" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWNpon.png"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWNCiq.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWNCiq.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtTII.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtTII.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtHit.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtHit.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtbJP.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtbJP.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtXQS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtXQS.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtodA.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtodA.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWtLz8.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWtLz8.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 首尔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>天下难寻</title>
+      <link href="/memory/past_nanxun/"/>
+      <url>/memory/past_nanxun/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YW8HjH.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW8HjH.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW854K.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW854K.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW87ge.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW87ge.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW8o9O.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW8o9O.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW8T3D.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW8T3D.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YW8qud.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YW8qud.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 湖州 </tag>
             
         </tags>
       
@@ -411,6 +538,31 @@
     
     
     <entry>
+      <title>北国的秋</title>
+      <link href="/memory/past_harbin/"/>
+      <url>/memory/past_harbin/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YWMfKI.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMfKI.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWMHPg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMHPg.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWMTIS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMTIS.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWM4qP.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWM4qP.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWMhrt.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMhrt.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWMoa8.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMoa8.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWM22d.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWM22d.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWMRxA.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWMRxA.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 德国 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>生日快乐唱给自己听</title>
       <link href="/sketch/happy_birthday/"/>
       <url>/sketch/happy_birthday/</url>
@@ -430,6 +582,31 @@
             <tag> 2017 </tag>
             
             <tag> birthday </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Sommerzeit</title>
+      <link href="/memory/past_germany/"/>
+      <url>/memory/past_germany/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p><div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">    <a href="https://s1.ax1x.com/2020/05/18/YWKo9J.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKo9J.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKT39.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKT39.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK7cR.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK7cR.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK3fH.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK3fH.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWQ8sI.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWQ8sI.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKlkD.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKlkD.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKJ1A.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKJ1A.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKY6I.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKY6I.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKtXt.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKtXt.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKUnP.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKUnP.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKa0f.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKa0f.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKd78.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKd78.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK0AS.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK0AS.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKBtg.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKBtg.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKDhQ.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKDhQ.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKspj.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKspj.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKy1s.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKy1s.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKcXq.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKcXq.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK6cn.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK6cn.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKRBV.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKRBV.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK2n0.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK2n0.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKW7T.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKW7T.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK5h4.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK5h4.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK4NF.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK4NF.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWK1te.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK1te.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKGpd.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKGpd.jpg"></a>    <a href="https://s1.ax1x.com/2020/05/18/YWKhAU.jpg" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKhAU.jpg"></a></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> memory </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 德国 </tag>
             
         </tags>
       

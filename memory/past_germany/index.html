@@ -93,19 +93,19 @@
         <div id="share" style="display:none">
             <ul>
     <li><a class="icon"
-            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/REST_and_Servlet/"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/memory/past_germany/"
             rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="https://twitter.com/share?url=http://alias.zone/tech/REST_and_Servlet/&amp;text=浅谈 RESTful 与 Servlet"
+            href="https://twitter.com/share?url=http://alias.zone/memory/past_germany/&amp;text=Sommerzeit"
             rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/REST_and_Servlet/&amp;title=浅谈 RESTful 与 Servlet"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/memory/past_germany/&amp;title=Sommerzeit"
             rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="mailto:?subject=浅谈 RESTful 与 Servlet&amp;body=Check out this article: http://alias.zone/tech/REST_and_Servlet/"
+            href="mailto:?subject=Sommerzeit&amp;body=Check out this article: http://alias.zone/memory/past_germany/"
             rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </li>
 </ul>
@@ -118,10 +118,10 @@
 <div class="content index my4">
     <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
     <header>
-        <h1 class="posttitle" itemprop="name headline">浅谈 RESTful 与 Servlet</h1>
+        <h1 class="posttitle" itemprop="name headline">Sommerzeit</h1>
         <div class="meta">
             <div class="postdate">
-                <time datetime="Mon Apr 20 2020 17:57:10 GMT+0200" itemprop="datePublished"> 2020-04-20</time>
+                <time datetime="Thu Aug 31 2017 11:58:00 GMT+0200" itemprop="datePublished"> 2017-08-31</time>
                 
                 
                 
@@ -133,14 +133,7 @@
                     
                         <i class="fas fa-tag"></i> 
                     
-                    <a class="tag-link" href="/tags/2020">2020</a>
-                </div>
-                
-                <div class="article-tag">
-                    
-                        <i class="fas fa-tag"></i> 
-                    
-                    <a class="tag-link" href="/tags/backend">backend</a>
+                    <a class="tag-link" href="/tags/德国">德国</a>
                 </div>
                 
             </div>
@@ -148,27 +141,36 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr>
-<p>今天Web-Tech课发了第一个项目作业，其中提到后端使用REST Service，对这个名词很熟悉，但对于后端开发只接触过古早的Servlet。</p>
-<p>搜了下二者的区别，发现本身这个比较是个伪命题，因为<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
-<ul>
-<li>RESTful Service是一个软件架构“风格”，</li>
-<li>而Servlet是Java 服务端的一种技术<br>之所以把它们拿出来比较，是由于它们代表了两个时代的技术风格与架构。下面就来阐述这两种技术架构的区别。</li>
-</ul>
-<p>Servelt API是1998年发布的，它的核心API一直变化不大，非常稳定，也是JavaEE众多API中最成功的一个。基于Servlet API产生了众多的框架，比较大家最熟悉的Structs，Spring MVC等。和REST对比，它们有如下特征：<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
-<ul>
-<li>它们的核心理念是servelt与handler之前的一个Mapping，利用一个配置文件（Spring MVC可以是Annotation式的配置）来处理Servlet和Handler之间的Mapping关系。</li>
-<li>Servlet具有Session状态，这也方便了服务器端实现一些带状态的逻辑。但同时这样也导致了Servlet实现多服务器的架构带来了困难，就必须实现复杂的负载均衡、Session复制、持久化机制。</li>
-<li>Servlet获取客户端信息的方式更多的是通过Request Parameters。想想你经常通过getParamter就可以明白。</li>
-</ul>
-<p>相对于Servlet，RESTful更多的是一种架构方式的改进，它强调以下几点：</p>
-<ul>
-<li>通过请求URL来获取信息，路径即是信息，这也是HTTP的核心理念。</li>
-<li>无状态，状态转而通过应用层或者数据库层来维护。</li>
-<li>通过http的POST, DELTE, PUT, GET等方式来实现数据的增删改查。而不再是借以前servlet中我们经常定义的通过方法名来区别各个方式，比如getXXXByXXX，updateXXX等等。</li>
-</ul>
-<p>References:</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">http://stackoverflow.com/questions/7874695/servlet-vs-restful</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">http://www.blogjava.net/Jack2007/archive/2008/10/08/233075.html</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>Shooting with 🍎 iPhone 6s Plus.</p>
+<div class="article-gallery justified-gallery" id="lightgallery" style="height: 1239.956px;">
+    <a href="https://s1.ax1x.com/2020/05/18/YWKo9J.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKo9J.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKT39.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKT39.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK7cR.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK7cR.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK3fH.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK3fH.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWQ8sI.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWQ8sI.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKlkD.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKlkD.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKJ1A.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKJ1A.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKY6I.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKY6I.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKtXt.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKtXt.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKUnP.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKUnP.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKa0f.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKa0f.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKd78.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKd78.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK0AS.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK0AS.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKBtg.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKBtg.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKDhQ.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKDhQ.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKspj.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKspj.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKy1s.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKy1s.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKcXq.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKcXq.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK6cn.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK6cn.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKRBV.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKRBV.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK2n0.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK2n0.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKW7T.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKW7T.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK5h4.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK5h4.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK4NF.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK4NF.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWK1te.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWK1te.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKGpd.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKGpd.jpg"></a>
+    <a href="https://s1.ax1x.com/2020/05/18/YWKhAU.jpg" target="_blank" rel="noopener" class="gallery-item"><img src="https://s1.ax1x.com/2020/05/18/YWKhAU.jpg"></a>
+</div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };
@@ -202,19 +204,19 @@
         <div id="share-footer" style="display:none">
             <ul>
     <li><a class="icon"
-            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/REST_and_Servlet/"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/memory/past_germany/"
             rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="https://twitter.com/share?url=http://alias.zone/tech/REST_and_Servlet/&amp;text=浅谈 RESTful 与 Servlet"
+            href="https://twitter.com/share?url=http://alias.zone/memory/past_germany/&amp;text=Sommerzeit"
             rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/REST_and_Servlet/&amp;title=浅谈 RESTful 与 Servlet"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/memory/past_germany/&amp;title=Sommerzeit"
             rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </li>
     <li><a class="icon"
-            href="mailto:?subject=浅谈 RESTful 与 Servlet&amp;body=Check out this article: http://alias.zone/tech/REST_and_Servlet/"
+            href="mailto:?subject=Sommerzeit&amp;body=Check out this article: http://alias.zone/memory/past_germany/"
             rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </li>
 </ul>
