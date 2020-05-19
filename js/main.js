@@ -49,19 +49,10 @@ $(function(){
 });
 
 $(document).ready(function() {
-  /**
-   * Logo print
-   */
-  // console.log('鈻堚枅鈺�  鈻堚枅鈺� 鈻堚枅鈻堚枅鈻堚晽 鈻堚枅鈻堚枅鈻堚枅鈺� 鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽');
-  // console.log('鈻堚枅鈺�  鈻堚枅鈺戔枅鈻堚晹鈺愨晲鈻堚枅鈺椻枅鈻堚晹鈺愨晲鈻堚枅鈺椻枅鈻堚晹鈺愨晲鈺愨晲鈺濃枅鈻堚晹鈺愨晲鈺愨晲鈺�');
-  // console.log('鈻堚枅鈻堚枅鈻堚枅鈻堚晳鈻堚枅鈻堚枅鈻堚枅鈻堚晳鈻堚枅鈺�  鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈺�  鈻堚枅鈻堚枅鈻堚枅鈻堚晽');
-  // console.log('鈻堚枅鈺斺晲鈺愨枅鈻堚晳鈻堚枅鈺斺晲鈺愨枅鈻堚晳鈻堚枅鈺�  鈻堚枅鈺戔枅鈻堚晹鈺愨晲鈺�  鈺氣晲鈺愨晲鈺愨枅鈻堚晳');
-  // console.log('鈻堚枅鈺�  鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺椻枅鈻堚枅鈻堚枅鈻堚枅鈺�');
-  // console.log('鈺氣晲鈺�  鈺氣晲鈺濃暁鈺愨暆  鈺氣晲鈺濃暁鈺愨晲鈺愨晲鈺愨暆 鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺愨暆');
+
 
   var now = new Date();
   if (now.getFullYear() == '2020' && now.getMonth() == '4' && now.getDate() == '4') {
-    // console.log('瀵瑰叏鍥藉悇鏃忎汉姘戝鎶楀嚮鏂板啝鑲虹値鐤儏鏂椾簤鐗虹壊鐑堝＋鍜岄€濅笘鍚岃優琛ㄧず娣卞垏鍝€鎮笺€�')
     $('html').attr('style', 'filter: grayscale(100%)');
   }
 
@@ -71,13 +62,15 @@ $(document).ready(function() {
   $('#read-btn,#read-mobile').click(function() {
     // $('body').removeAttr("background-color");
     // console.log($('body').attr("style"));
-    if($('body').attr("style") == undefined) {
-      $('body').attr("style","background:url(/imgs/paper.jpg) repeat center;");
+    if(localStorage.getItem("dark_mode") === 'dark') {
+      alert("请先切换至Light Mode。")
     } else {
-      $('body').removeAttr("style");
+      if($('body').attr("style") == undefined) {
+        $('body').attr("style","background:url(/imgs/paper.jpg) repeat center;");
+      } else {
+        $('body').removeAttr("style");
+      }
     }
-
-
   });
 
   $("#dark-btn,#dark-mobile").click(function() {
