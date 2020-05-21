@@ -887,6 +887,10 @@ body {
 		padding-left: 70px;
 		font-size: 1rem
 	}
+
+	body {
+		margin: 0 5%;
+	}
 }
 
 #header-post {
@@ -1917,6 +1921,24 @@ code {
 	src: local("HYPingAnXingCuF"), url(../libs/HY/HYPingAnXingCuF.ttf) format("truetype")
 }
 
+@font-face {
+	font-family: "Mamelon-2";
+	font-style: normal;
+	src: local("Mamelon-2"), url(../libs/jp/Mamelon-2.otf) format("opentype")
+}
+
+@font-face {
+	font-family: "KochiGothicMod";
+	font-style: normal;
+	src: local("KochiGothicMod"), url(../libs/jp/KochiGothicMod.otf) format("truetype")
+}
+
+@font-face {
+	font-family: "irohamaru-Regular-2";
+	font-style: normal;
+	src: local("irohamaru-Regular-2"), url(../libs/jp/irohamaru-Regular-2.otf) format("truetype")
+}
+
 .content .dui-lian {
 	font-family: "HYChengXingJ"; 
 	font-size: 50px;
@@ -2114,3 +2136,8 @@ div#bagua_svg {
 	box-shadow: 5px 10px 18px #888888, 0 0 30px 10px rgba(255,255,255,.7) inset;
 	border-radius:2%;
 }
+
+.jp {
+	font-family: "irohamaru-Regular-2";
+}
+

@@ -63,7 +63,11 @@ $(document).ready(function() {
     // $('body').removeAttr("background-color");
     // console.log($('body').attr("style"));
     if(localStorage.getItem("dark_mode") === 'dark') {
-      alert("请先切换至Light Mode。")
+      removeCss('/css/dark.css');
+      $("#logo").attr("style","background-image:url(/imgs/header.png)");
+      $("#dark-btn").attr("class","fa fa-moon");
+      localStorage.setItem("dark_mode", 'light');
+      $('body').attr("style","background:url(/imgs/paper.jpg) repeat center;");
     } else {
       if($('body').attr("style") == undefined) {
         $('body').attr("style","background:url(/imgs/paper.jpg) repeat center;");
