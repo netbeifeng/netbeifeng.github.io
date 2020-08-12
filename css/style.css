@@ -461,6 +461,10 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
+	line-height: 1.725;
+	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
 }
 
 .content button:hover {

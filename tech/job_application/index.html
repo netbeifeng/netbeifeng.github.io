@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="description" content="Always believe that something wonderful is about to happen.">
+    <meta name="keywords" content="alias,blog">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="page">
+    <meta property="og:url" content="https://alias.zone">
+    <meta property="og:site_name" content="Alias × Blog">
+    <meta property="og:description" content="Always believe that something wonderful is about to happen.">
+    <meta property="og:locale" content="en">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Alias × Blog">
+    <meta name="twitter:description" content="Always believe that something wonderful is about to happen.">
+    <link rel="shortcut icon" href="/imgs/favicon.ico">
+    <link rel="icon" type="image/png" href="/imgs/header.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imgs/header.png">
+    <title>
+        Alias x Blog
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/justifiedgallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/rtl.css">
+
+    <link rel="stylesheet" href="/libs/lightgallery/src/css/lightgallery.css">
+    <script>"dark" === localStorage.getItem("dark_mode") ? document.write('<link rel="stylesheet" type="text/css" href="/css/dark.css"></span>') : ""</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    <div id="header-post">
+    <a id="menu-icon" href="#">
+        <i class="fas fa-bars fa-lg"></i>
+    </a> 
+    <a id="menu-icon-tablet" href="#"style="display: none;">
+        <i class="fas fa-bars fa-lg"></i>
+    </a> 
+    <a id="top-icon-tablet" href="#" onclick="$(&quot;html, body&quot;).animate({scrollTop:0},&quot;fast&quot;)" style="">
+        <i class="fas fa-chevron-up fa-lg"></i>
+    </a> 
+    <span id="menu">
+        <span id="nav" style="display: none;">
+            <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/archive/">Article</a></li>
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/footprint/">Footmarks</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/about/">About</a></li>
+</ul>
+        </span>
+        <br>
+        <span id="actions">
+            <ul>
+    <li><a class="icon" href=""><i class="fas fa-chevron-left"
+                aria-hidden="true" onmouseover="$(&quot;#i-prev&quot;).toggle()"
+                onmouseout="$(&quot;#i-prev&quot;).toggle()"></i></a></li>
+    <li><a class="icon" href=""><i class="fas fa-chevron-right"
+                aria-hidden="true" onmouseover="$(&quot;#i-next&quot;).toggle()"
+                onmouseout="$(&quot;#i-next&quot;).toggle()"></i></a></li>
+    <li><a class="icon" href="#"
+            onclick="$(&quot;html, body&quot;).animate({scrollTop:0},&quot;fast&quot;)"><i
+                class="fas fa-chevron-up" aria-hidden="true"
+                onmouseover="$(&quot;#i-top&quot;).toggle()"
+                onmouseout="$(&quot;#i-top&quot;).toggle()"></i></a></li>
+                
+    
+        <li><a class="icon"><i class="fas fa-book-open" id="read-btn" aria-hidden="true"
+            onmouseover="$(&quot;#i-read&quot;).toggle()"
+            onmouseout="$(&quot;#i-read&quot;).toggle()"></i></a></li>  
+    
+
+          
+    <li><a class="icon"><i class="fa fa-sun" id="dark-btn" aria-hidden="true"
+                onmouseover="$(&quot;#i-dark&quot;).toggle()"
+                onmouseout="$(&quot;#i-dark&quot;).toggle()"></i></a></li>
+    <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                onmouseover="$(&quot;#i-share&quot;).toggle()"
+                onmouseout="$(&quot;#i-share&quot;).toggle()"
+                onclick="return $(&quot;#share&quot;).toggle(),!1"></i></a></li>
+</ul>
+            <span id="i-prev" class="info" style="display:none">Previous post</span> 
+            <span id="i-next" class="info" style="display:none">Next post</span>
+            <span id="i-top" class="info" style="display:none">Back to top</span> 
+            <span id="i-read" class="info" style="display:none">Read Mode</span>
+            <span id="i-dark" class="info" style="display:none">Switch mode</span> 
+            <span id="i-share" class="info" style="display:none">Share post</span>
+        </span><br>
+        <div id="share" style="display:none">
+            <ul>
+    <li><a class="icon"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/job_application/"
+            rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="https://twitter.com/share?url=http://alias.zone/tech/job_application/&amp;text=八月病"
+            rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/job_application/&amp;title=八月病"
+            rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="mailto:?subject=八月病&amp;body=Check out this article: http://alias.zone/tech/job_application/"
+            rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+    </li>
+</ul>
+        </div>
+        <div id="toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请-Bewerbung"><span class="toc-number">1.</span> <span class="toc-text">申请 - Bewerbung</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#材料-Dokumente"><span class="toc-number">2.</span> <span class="toc-text">材料 - Dokumente</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简历-Lebenslauf"><span class="toc-number">3.</span> <span class="toc-text">简历 - Lebenslauf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意-Achtung"><span class="toc-number">4.</span> <span class="toc-text">注意 - Achtung!</span></a></li></ol>
+        </div>
+    </span>
+</div>
+<div class="content index my4">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 class="posttitle" itemprop="name headline">八月病</h1>
+        <div class="meta">
+            <div class="postdate">
+                <time datetime="Mon Aug 10 2020 15:35:10 GMT+0200" itemprop="datePublished"> 2020-08-10</time>
+                
+                
+                
+                        
+                
+
+                
+                <div class="article-tag">
+                    
+                        <i class="fas fa-tag"></i> 
+                    
+                    <a class="tag-link" href="/tags/2020">2020</a>
+                </div>
+                
+                <div class="article-tag">
+                    
+                        <i class="fas fa-tag"></i> 
+                    
+                    <a class="tag-link" href="/tags/fontend">fontend</a>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<hr>
+<p>不想找工作。</p>
+<p>倏忽间夏天就只剩下尾巴。</p>
+<p>转眼间就是在德国的第三个年头。<br><br/><br><a href="https://f4.hs-hannover.de/fileadmin/_processed_/e/9/csm_19-08-09-BIN_Curriculum_20192_darstellung_20190809_85f5d40f8f.png?rbiFocus=desktop" target="_blank" rel="noopener" class="gallery-item"><img src="https://f4.hs-hannover.de/fileadmin/_processed_/e/9/csm_19-08-09-BIN_Curriculum_20192_darstellung_20190809_85f5d40f8f.png?rbiFocus=desktop" alt=""></a><br><br/><br>第五学期，实习，终于要来了吗？</p>
+<h2 id="申请-Bewerbung"><a href="#申请-Bewerbung" class="headerlink" title="申请 - Bewerbung"></a>申请 - Bewerbung</h2><p>稍微了解了一下在德的求职途径，无非也就这几种：</p>
+<ol>
+<li><del>(大)</del>公司官网发布的招聘信息</li>
+<li>学校提供的<strong>招聘会</strong></li>
+<li>内推 (教授、同学等)</li>
+<li>平台<ol>
+<li>如<a href="https://stepstone.de" target="_blank" rel="noopener">Stepstone.de</a>和<a href="indeed.de">indeed.de</a>较为常用</li>
+<li>社交性质的如<a href="Xing.de">xing.de</a>和<a href="linkedin.com">linkedin.com</a></li>
+</ol>
+</li>
+</ol>
+<p>这样看下来，第一条的话，常用于大公司，考虑到自己的德语水平和专业成绩，暂时不考虑去投大公司。<br>招聘会的话，因为今年的Corona，大抵是凉了一半。<br>对于没有Soziale Kontakt的肥宅来说，第三点也是可以直接 <ruby><rb>論外</rb><rp>(</rp><rt>ろんがい</rt><rp>)</rp></ruby>了。</p>
+<p>不过不论是哪条途径，最后反正需要的材料都是一样的。<br>所以建议先把材料全都准备好，再根据自己的情况在选择不同的方式去申请。</p>
+<h2 id="材料-Dokumente"><a href="#材料-Dokumente" class="headerlink" title="材料 - Dokumente"></a>材料 - Dokumente</h2><p>不管是申请什么，以下两样材料都是必不可少的：</p>
+<ol>
+<li>简历 - Lebenslauf</li>
+<li>动机信 - Anschreiben</li>
+</ol>
+<p>其他的材料，比如:</p>
+<ol>
+<li>注册证明 - Immatrikulationsbescheinigung</li>
+<li>成绩单 - Notenspiegel</li>
+<li>医保证明 - Mitgliedsbescheinigung</li>
+</ol>
+<p>都不是必须的，但可以视情况提交。</p>
+<h2 id="简历-Lebenslauf"><a href="#简历-Lebenslauf" class="headerlink" title="简历 - Lebenslauf"></a>简历 - Lebenslauf</h2><p>简历可以说是申请的重中之重了，在网上看了很多文章，关于模板的使用也是众说纷纭，有的说简历不能用模板，有的又说模板统一。</p>
+<p>由于个人掌握的技能大多是前端的，也有过小型的前端Web和安卓App开发经验，所以想了想不如打造一份HTML模板，即能够将自己所做的项目方便地链接到Github上，还能够做一些交互。</p>
+<div class="lebenslauf_generator">
+    <style>    
+        input::-webkit-input-placeholder{
+            font-family: JetBrains-Mono, "HYChangLiSongKeBen" ,Menlo, monospace, "Meslo LG";
+            font-size: 0.9rem;
+        }
+        .temp {
+            display: inline-block;
+            font-size: 1.2rem;
+            width: 48%;
+            font-family: JetBrains-Mono, "HYChangLiSongKeBen" ,Menlo, monospace, "Meslo LG";
+        }
+        input.temp {
+            color: #888;
+        }
+        input:focus {
+            color: #222;
+        }
+        .temp_in_var {
+            display: inline-block;
+            font-size: 1.2rem;
+            width: 48%;
+            margin: 0.3rem 0 0.3rem 0;
+            vetical-align:middle;
+        }
+        .temp_var {
+            display: inline-block;
+            font-size: 1.1rem;
+            width: 48%;
+            text-align: center;
+            font-family: JetBrains-Mono, "HYChangLiSongKeBen" ,Menlo, monospace, "Meslo LG";
+        }
+        .temp_headline  {
+            display: block;
+            font-size: 1.4rem;
+            text-decoration: underline;
+            font-family: JetBrains-Mono, "HYChangLiSongKeBen" ,Menlo, monospace, "Meslo LG";
+        }
+        .cleanfloat {display: inline-block; width: 100%; text-align:center; margin:0;}
+        .cleanfloat li{list-style:none; float:left; font-size:1.2rem;  margin:5px; cursor:pointer; line-height: 0.85; width:auto;}
+        .cs{color:coral;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/imagetracerjs@1.2.6/imagetracer_v1.2.6.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/filesaver.js@1.3.4/FileSaver.min.js"></script>
+    <script>
+        var imgBase64URL = "";
+        var signBase64URL = "";
+        var signSVG = "";
+        var rowCountOfStudien = 1;
+        var rowCountOfPraErfahrung = 1;
+        var rowCountOfPraErfahrungDetail = 1;
+        function imgChange(img) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                imgBase64URL = ev.target.result;
+                console.log(ev.target.result);
+            }
+            reader.readAsDataURL(img.files[0]);
+        }
+        function signChange(sign) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                signBase64URL = ev.target.result;
+                console.log(ev.target.result);
+            }
+            reader.readAsDataURL(sign.files[0]);
+            reader.onloadend = function () {
+                ImageTracer.imageToSVG(
+                    signBase64URL, /* input filename / URL */
+                    function(svgstr){ ImageTracer.appendSVGString( svgstr, 'svgcontainer' ); signSVG = svgstr;  }, /* callback function to run on SVG string result */
+                    'posterized2' /* Option preset */
+                );
+            }
+        }
+        function addStudienRow() {
+            // console.log(rowCountOfStudien)
+            rowCountOfStudien++;
+            $(".stu").append('<input class="temp_in_var" id="studien_zeit_'+rowCountOfStudien+'"/> ','<input class="temp_in_var" id="studien_uni_'+rowCountOfStudien+'"/>');
+        }
+        function addPraErfahrungDetailRow() {
+            rowCountOfPraErfahrungDetail++;      
+            $("#pe_"+rowCountOfPraErfahrung+"_container").append('<input class="temp_in_var" id="pe_'+rowCountOfPraErfahrung+'_zeit_'+rowCountOfPraErfahrungDetail+'"/> <input class="temp_in_var" id="pe_'+rowCountOfPraErfahrung+'_fh_'+rowCountOfPraErfahrungDetail+'"/>');
+        }
+        function addPraErfahrungRow() {
+            rowCountOfPraErfahrung++;
+            let html = '<hr/><div id="pe_'+rowCountOfPraErfahrung+'_container"><span class="temp">Firma / Hochschule: </span> <input id="pe_'+rowCountOfPraErfahrung+'" class="temp_in_var"></input><span class="temp_var"> Zeitraum - 时间段 </span> <span class="temp_var"> Aufgaben - 工作内容 </span><input class="temp_in_var" id="pe_'+rowCountOfPraErfahrung+'_zeit_1"/> <input class="temp_in_var" id="pe_'+rowCountOfPraErfahrung+'_fh_1"/></div>';
+            $("#pe_"+(rowCountOfPraErfahrung-1)+"_container").after(html);
+        }
+    </script>
+    <div class="per_dat">
+        <span class="temp_headline">个人信息 - Persönliche Daten</span>
+        <span class="temp">Name, Vorname:</span> <input id="name" class="temp" placeholder="Ming, Zi"></input>
+        <span class="temp">Geburtsdatum:</span> <input id="birthday" class="temp" placeholder="01.01.1999"></input>
+        <span class="temp">Geburtsort:</span> <input id="birthplace" class="temp" placeholder="Zhejiang, China"></input>
+        <span class="temp">Telefon:</span> <input id="phonenumber" class="temp" placeholder="0151-12345678"></input>
+        <span class="temp">E-Mail:</span> <input id="emailaddress" class="temp" placeholder="muster@mail.de"></input>
+        <span class="temp">Photo:</span> <input style="font-size:0.9rem;width:auto;" type="file" id="photo" accept="image/png,image/jpeg,image/jpg" onchange="imgChange(this)"/>
+    </div>
+    <div class="stu">
+        <span class="temp_headline">学历 - Studien</span>
+        <span class="temp_var"> Zeitraum - 时间段 </span> <span class="temp_var"> Universität - 高校 </span>
+        <input class="temp_in_var" id="studien_zeit_1" placeholder="Seit 01.01.2018"/> <input class="temp_in_var" id="studien_uni_1" placeholder="Leibniz Universität Hannover"/>
+    </div>
+    <button id="try" style="width:97.5%;" onclick="addStudienRow()"><i class="fas fa-plus"></i></button>
+    <div class="pra_erf">
+        <span class="temp_headline">实习经验 - Praktische Erfahrung</span>
+        <div id="pe_1_container">
+            <span class="temp">Firma / Hochschule: </span> <input id="pe_1" class="temp_in_var"></input>
+            <span class="temp_var"> Zeitraum - 时间段 </span> <span class="temp_var"> Aufgaben - 工作内容 </span>
+            <input class="temp_in_var" id="pe_1_zeit_1"/> <input class="temp_in_var" id="pe_1_fh_1"/>
+        </div>
+    </div>
+    <button id="try" style="width:97.5%;" onclick="addPraErfahrungDetailRow()" id="addDetailRow"><i class="fas fa-plus"></i></button>
+    <hr/>
+    <button id="try" style="width:97.5%;" onclick="addPraErfahrungRow()" id="addRow">确认上述记录/添加新的条目</button>
+    <script>
+        var rowCountOfSprache = 1;
+        var rowCoundOfEDVKenn = 1;
+        function clickStar(star) {
+            $(star).addClass('cs');
+            $(star).prevAll().addClass('cs');
+            $(star).nextAll().removeClass('cs');
+        }
+        function addSpracheRow() {
+            rowCountOfSprache++;
+            $(".spr_ken").append('<input class="temp_in_var" id="s_'+rowCountOfSprache+'"/>   <span class="temp_in_var"><ul class="cleanfloat" id="s_'+rowCountOfSprache+'_ul"><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li></ul></span>');
+        }
+        function addEDVRow() {
+            rowCoundOfEDVKenn++;
+            $(".edv_ken").append('<input class="temp_in_var" id="edv_'+rowCoundOfEDVKenn+'"/>   <span class="temp_in_var"><ul class="cleanfloat" id="edv_'+rowCoundOfEDVKenn+'_ul"><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li><li onclick="clickStar(this)"><i class="fas fa-star"></i></li></ul></span>');
+        }
+    </script>
+    <div class="spr_ken">
+        <span class="temp_headline">外语能力 - Sprachen</span>
+        <span class="temp_var"> Sprache - 语言 </span> <span class="temp_var"> Niveau - 水平 </span>
+        <input class="temp_in_var" id="s_1" placeholder="eg. Deutsch"/>   <span class="temp_in_var"><ul class="cleanfloat" id="s_1_ul">
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+        </ul></span>
+    </div>
+    <button id="try" style="width:97.5%;" onclick="addSpracheRow()" id="addSpracheRow"><i class="fas fa-plus"></i></button>
+    <div class="edv_ken">
+        <span class="temp_headline">软件能力 - EDV-Kenntnisse</span>
+        <span class="temp_var"> Kenntnis - 技能 </span> <span class="temp_var"> Niveau - 水平 </span>
+        <input class="temp_in_var" id="edv_1" placeholder="eg. Mircosoft Office"/>   <span class="temp_in_var"><ul class="cleanfloat" id="edv_1_ul">
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+        </ul></span>
+        <input class="temp_in_var" id="edv_2" placeholder="eg. Python"/>   <span class="temp_in_var"><ul class="cleanfloat" id="edv_2_ul">
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+        </ul></span>
+        <input class="temp_in_var" id="edv_3" placeholder="eg. Adobe Photoshop"/>   <span class="temp_in_var"><ul class="cleanfloat" id="edv_3_ul">
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+            <li onclick="clickStar(this)"><i class="fas fa-star"></i></li>
+        </ul></span>
+    </div>
+    <button id="try" style="width:97.5%;" onclick="addEDVRow()" id="addEDVRow"><i class="fas fa-plus"></i></button>
+    <div class="hob">
+        <span class="temp_headline">兴趣爱好 - Hobbys</span>
+        <input class="temp_in_var" style="width:97.5%;" id="hobs" placeholder="简单描述就好 eg. Game spielen, Singen..."/>
+    </div>
+    <div class="signature">
+        <span class="temp_headline">签名 - Unterschrift</span>
+        <input style="font-size:1rem;width:auto;" type="file" id="photo" accept="image/png,image/jpeg,image/jpg" onchange="signChange(this)"/>
+    </div>
+    <div id="svgcontainer"></div>
+    <hr>
+    <div class="color">
+        <span class="temp_headline">配色 - Farben</span>
+        <span class="temp_var"> Hauptfarbe - 主体色 </span> <span class="temp_var"> Unterfarbe - 辅助色 </span>
+        <input class="temp_in_var" style="height:2rem;" id="f_1" type="color"/> <input class="temp_in_var" style="height:2rem;" id="f_2" type="color"/>
+    </div>
+        <script>
+        function generate() {
+            var name = $("#name").val();
+            var birthday = $("#birthday").val();
+            var birthplace = $("#birthplace").val();
+            var phonenumber = $("#phonenumber").val();
+            var emailaddress = $("#emailaddress").val();
+            var photo = imgBase64URL;
+            var studien = $(".stu").find("input");
+            var studien_zeit = new Array();
+            var studien_uni = new Array();
+            for(let i = 0; i < studien.length; i++) {
+                if($(studien.get(i)).val().length > 0)
+                    if(i % 2 === 0) {
+                        studien_zeit.push($(studien.get(i)).val());
+                    } else {
+                        studien_uni.push($(studien.get(i)).val());
+                    }
+            }
+            var pra_erf = $(".pra_erf").find("div");
+            var pra_erf_Array = new Array(pra_erf.length);
+            for(let i = 0; i < pra_erf.length; i++) {
+                pra_erf_Array[i] = new Array($(pra_erf[i]).find("input").length);
+                let temp_inputs = $(pra_erf[i]).find("input");
+                // console.log(temp_inputs.length);
+                // console.log("i="+i);
+                for(let j = 0; j < temp_inputs.length; j++) {
+                    let temp_text = $(temp_inputs.get(j)).val();
+                    // console.log("j="+j);
+                    pra_erf_Array[i][j] = temp_text;
+                }
+            }
+            var spr_ken = $(".spr_ken");
+            var spr_ken_inputs = new Array();
+            var spr_ken_lis = new Array();
+            for(let i = 0; i < spr_ken.find("input").length; i++) {
+                if($(spr_ken.find("input").get(i)).val().length > 0) {
+                    spr_ken_inputs.push($(spr_ken.find("input").get(i)).val());
+                    spr_ken_lis.push($(spr_ken.find("ul").get(i)).find("li.cs").length);
+                }
+            }
+            // console.log(spr_ken_inputs);
+            // console.log(spr_ken_lis);
+            var edv_ken = $(".edv_ken");
+            var edv_ken_inputs = new Array();
+            var edv_ken_lis = new Array();
+            for(let i = 0; i < edv_ken.find("input").length; i++) {
+                if($(edv_ken.find("input").get(i)).val().length > 0) {
+                    edv_ken_inputs.push($(edv_ken.find("input").get(i)).val());
+                    edv_ken_lis.push($(edv_ken.find("ul").get(i)).find("li.cs").length);
+                }
+            }
+            // console.log(edv_ken_inputs);
+            // console.log(edv_ken_lis);
+            var hobbys = $("#hobs").val();
+            var unterschrift = signSVG;
+            // console.log(signSVG);
+            var hau_farbe = $("#f_1").val();
+            var sub_farbe = $("#f_2").val();
+            // console.log(hau_farbe);
+            // console.log(sub_farbe);
+            // var lebenslauf = "";
+            // console.log($("iframe").html("<!DOCTYPE html ><html lang='de-DE'></html>"));
+            // console.log($("iframe").html());
+            var style = "<style>*{font-family:Helvetica}html{font-size:30px}.page_container{position:absolute;width:85%;height:auto;left:5%;top:2%;margin-bottom:3%}.section_container{width:100%}.section_container h2{font-size:.95rem;color:"+hau_farbe+"}.section_container p{font-size:.9rem;margin-top:.5rem;margin-bottom:.5rem}.section_container span{display:inline-block;width:50%}.section_container span.edv{width:30%}.section_container span.edv_circle{width:20%}.section_container .photo{position:absolute;top:2%;right:0;display:flex;flex-direction:column}.section_container .photo img{border:3px solid "+sub_farbe+";position:relative;left:20%;width:80%}.section_container .photo label{color:"+hau_farbe+";font-weight:bold;font-size:1.2rem;position:relative;left:10%;margin-bottom:.3rem;text-align:center}.section_container svg{position:relative;left:80%}.section_container table{display:inline-block;position:relative;width:auto;left:50%;margin-top:-1.5rem;border-spacing:0;border:solid "+sub_farbe+" 1px;box-shadow:0 1px 1px #ccc;border-radius:15px}.section_container table th,.section_container table td{border-right:solid "+sub_farbe+" 1px;border-bottom:solid "+sub_farbe+" 1px;padding:10px;text-align:center}.section_container table tr:last-child td{border-bottom:0}.section_container table td:last-child{border-right:0}.section_container table tr:first-child td:first-child{border-radius:15px 0 0 0}.section_container table tr:first-child td:last-child{border-radius:0 15px 0 0}.section_container table tr:last-child td:first-child{border-radius:0 0 0 15px}.section_container table tr:last-child td:last-child{border-radius:0 0 15px 0}.section_container table tr td:hover{background:"+sub_farbe+"}.section_container a{text-decoration:none;color:"+sub_farbe+"}.section_container u{position:relative}.section_container u:hover:after{position:absolute;left:15%;top:50%;padding:5px;background-color:"+sub_farbe+";border-radius:5px;color:#fff;content:attr(tooltip);z-index:2;width:auto}.division_line{width:100%;height:1px;border-top:solid "+sub_farbe+"}.circle_hollow{display:inline-block;width:20px;height:20px;border-radius:10px;border:1px solid "+hau_farbe+";background-color:#fff}.circle_solid{display:inline-block;width:20px;height:20px;border-radius:10px;border:1px solid "+hau_farbe+";background-color:"+sub_farbe+"}@media screen and (max-width:1200px){.section_container .photo img{left:50%;width:50%}.section_container .photo label{font-size:.9rem;left:25%}.section_container svg{left:70%}}</style></hesssssad>";
+            var body_1 = "<body><div class='page_container'><h1>Lebenslauf</h1><br/><div class='section_container'><h2>Persönliche Daten</h2><div class='photo'><label>"+name+"</label><imssssg alt='photo' src='"+photo+"'/></div><div class='division_line'></div><p><span>Name, Vorname:</span><span>"+name+"</span></p><p><span>Geburtsdatum:</span><span>"+birthday+"</span></p><p><span>Geburtsort:</span><span>"+birthplace+"</span></p><p><span>Telefon:</span><span><a href='tel:"+phonenumber+"'>"+phonenumber+"</a></span></p><p><span>E-Mail:</span><span><a href='mailto:"+emailaddress+"'>"+emailaddress+"</a></span></p></div><div class='section_container'><h2>Studien</h2><div class='division_line'></div>";
+            var body_2 = "";
+            for(let i = 0; i < studien_zeit.length; i++) {
+                body_2 += "<p><span>"+studien_zeit[i]+"</span><span>"+studien_uni[i]+"</span></p>";
+            }
+            body_2 += "</div><br/><div class='section_container'><h2>Praktische Erfahrung</h2><div class='division_line'></div>";
+            var body_3 = "";
+            for(let i = 0; i < pra_erf_Array.length; i++) {
+                body_3 += "<p><strong>"+pra_erf_Array[i][0]+"</strong></p>";
+                let temp = 0;
+                for(let j = 0 ; j < (pra_erf_Array[i].length - 1) / 2; j++) {
+                    body_3 += "<p><span>"+pra_erf_Array[i][j+1+temp]+"</span><span>"+pra_erf_Array[i][j+2+temp]+"</span></p>";
+                    temp++;
+                }
+            }
+            var body_4 = "</div><br/><div class='section_container'><h2>Sprachen</h2><div class='division_line'></div><p>";
+            for(let i = 0; i < spr_ken_inputs.length; i++) {
+                var stufe = "请选择该语言的水平";
+                switch(spr_ken_lis[i]) {
+                    case 0: break;
+                    case 1: stufe = "Grundkenntnisse"; break;
+                    case 2: stufe = "konversationssicher"; break;
+                    case 3: stufe = "fließend"; break;
+                    case 4: stufe = "verhandlungssicher"; break;
+                    case 5: stufe = "Muttersprache"; break;
+                }
+                body_4 += "<span>"+spr_ken_inputs[i]+"</span><span>"+stufe;
+                for(let j = 0; j < spr_ken_lis[i]; j++) {
+                    body_4 += " <label class='circle_solid'></label>";
+                }
+                for(let k = 0; k < 5 - spr_ken_lis[i]; k++) {
+                    body_4 += " <label class='circle_hollow'></label>";
+                }
+                body_4 += "</span></p>";
+            }
+            body_4 += "</div>";
+            var body_5 = "<div class='section_container'><h2>EDV-Kenntnisse</h2><div class='division_line'></div>";
+            for(let i = 0; i < edv_ken_inputs.length; i+=2) {
+                body_5 += "<p><span class='edv'>"+edv_ken_inputs[i]+"</span><span class='edv_circle'>";
+                for(let j = 0; j < edv_ken_lis[i]; j++) {
+                    body_5 += " <label class='circle_solid'></label>";
+                }
+                for(let k = 0; k < 5 - edv_ken_lis[i]; k++) {
+                    body_5 += " <label class='circle_hollow'></label>";
+                }
+                if(i + 1 < edv_ken_inputs.length) {
+                    body_5 += "</span><span class='edv'>"+edv_ken_inputs[i+1]+"</span><span class='edv_circle'>";
+                    for(let j = 0; j < edv_ken_lis[i+1]; j++) {
+                        body_5 += " <label class='circle_solid'></label>";
+                    }
+                    for(let k = 0; k < 5 - edv_ken_lis[i+1]; k++) {
+                        body_5 += " <label class='circle_hollow'></label>";
+                    }
+                }
+                body_5 += "</span></p>";
+            }
+            body_5 += "</div>";
+            var body_6 = "<div class='section_container'><h2>Hobbys</h2><div class='division_line'></div><p><span>"+hobbys+"</span></p>";
+            body_6 += unterschrift.split("rgb(0,0,0)").join(sub_farbe);
+            body_6 += "</div></div></bodffy></html>";
+            var blob = new Blob(["<!DOCTYPE html ><html lang='de-DE'><head><title>Lebenslauf - "+name+"</title><meta name='format-detection' content='telephone=yes'/><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'><link rel='icon' href='data:image/png;base64,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'/>",style.replace("hesssssad","head"),body_1.replace("imssssg","img"),body_2,body_3,body_4,body_5,body_6.replace("bodffy","body")], {type: "text/plain;charset=utf-8"});
+            saveAs(blob, "Lebenslauf.html");
+        }
+    </script>
+    <div style="text-align:center;">
+        <button id="try" style="width:49%;" id="generate" onclick="generate()">生成！</button>
+    </div>
+</div>
+<hr/>
+表单填好了的话，就点击 <kbd style="width:fit-content;">&nbsp;“生成！”&nbsp;</kbd> 生成你的简历(Lebenslauf)吧！<br/>
+会自动下载到浏览器的默认下载目录，注意下方的下载栏哦！
+
+<h2 id="注意-Achtung"><a href="#注意-Achtung" class="headerlink" title="注意 - Achtung!"></a>注意 - Achtung!</h2><p>通过上面的生成模板，可以得到就一份看的入眼的简历了。接下来就拿着简历去投吧！</p>
+<p>关于上传的两个图片和配色，需要注意一下：</p>
+<ul>
+<li>照片<br>尺寸最好为<strong>350*500</strong>，300DPI。</li>
+<li>签名<br>尺寸最好为<strong>200*100</strong>，300DPI。</li>
+<li>配色<br>如果没有什么审美的话建议可以去<a href="https://encycolorpedia.com/" target="_blank" rel="noopener">Encycolorpedia</a>找一种自己喜欢的颜色。<br>比如<code><a href="https://encycolorpedia.com/52634b" target="_blank" rel="noopener">Hex: #52634B</a></code>往下拉可以找到它的撞色及渐变色，再选一个颜色就好了。</li>
+</ul>
+<p>关于其他的信息：</p>
+<ul>
+<li><strong>个人信息（Persönliche Daten）</strong><br>  考虑到德国人分不清中国人的姓和名，我用了NAME, Vorname中间加上逗号的写法，姓氏全大写。<br>  电子邮箱也最好注册自己姓名一致的<a href="https://www.gmx.net/" target="_blank" rel="noopener">GMX</a>邮箱。或者干脆直接用学校邮箱！<blockquote>
+<p>例如: <a href="mailto:vorname.nachname@gmx.de">vorname.nachname@gmx.de</a></p>
+</blockquote>
+</li>
+<li><strong>学历（Studium/Studien）</strong><br>按照倒叙的顺序写，先写在读学校和专业，再写之前已毕业的学校。在读的学校时间可用Seit年月来表示，可以注明Bachelor或Master。<br>已经完成的学业可以视情况在下面写上毕业成绩和毕业论文。成绩如果一般可以不写，论文和实习关系不大也不用写。<br>高考之前的中学就不用写，公司一般也都不关心，如果是在国内读的就更没必要翻译后再写上了。</li>
+<li><strong>实习经历（Praktische Erfahrung）</strong><br>注意这里并没有使用实习（Praktikum）这个词，因为可能你现在找的正是第一份企业实习，而你在这里写的可以是任何实际亲手做过的经历。<br>如果你有学生工（Werkstudent）或者Hiwi的经历，一定要写上去。甚至如果还完全没有在任何一个公司做过的话，也不用担心。<br>这里还可以写上跟教授做过的实操作业，团队作业（Gruppenarbeit）等等，甚至国内的金工实习（Metallverarbeitung）都可以。<br>这里写的东西一点要真实可信，因为这个部分是在面试中100%会被问到的。关于面试我们放在最后。<br>注意中餐馆打工或是其他非专业相关的工作，仓库打包，或者展会什么的就没有必要写上去了。</li>
+<li><strong>外语能力（Sprachen）</strong><br>这里请按照Grundkenntnisse、Gute Kenntnisse、Fließend、Verhandlungssicher、Muttersprache来对自己的语言水平进行评估，也就是大概对应A2-C2的等级。<br>建议德语或英语至少有一项具有Fließend程度。</li>
+<li><strong>软件能力（elektronische Datenverarbeitung / EDV）</strong><br>模板用了实心和空心的圆来表示这一项水平，Microsoft Office这类基础的可以直接写上，曾经有学过的专业相关的任何软件都可以写上。Matlab之类的。</li>
+<li><strong>兴趣爱好（Hobbys）</strong><br>非必需，但如果要写的话建议写上体育类的，足球篮球山地车等。一些面试官可能也会再这里选一个问题作为结束。</li>
+</ul>
+<p>最终效果大致如下，码了个人信息。<br><br/><br><a href="https://s1.ax1x.com/2020/08/12/ajihe1.png" target="_blank" rel="noopener" title="Lebenslauf_Alias" class="gallery-item"><img src="https://s1.ax1x.com/2020/08/12/ajihe1.png" alt="Lebenslauf_Alias"></a><br><br/><br>目前CSS样式还没有去适配<code>not screen</code>，所以转成pdf格式的话有点崩坏。</p>
+<p>不过，觉得如果是作为实习生的Web岗位的话，提供一份html的简历也能证明自己的一定能力。</p>
+<p>个人觉得很那种吸引眼球的简历反而不太讨喜。<br>比如下面两种：</p>
+<ol>
+<li>游戏式: <a href="http://rleonardi.com/interactive-resume/" target="_blank" rel="noopener">http://rleonardi.com/interactive-resume/</a></li>
+<li>代码式: <a href="http://strml.net/" target="_blank" rel="noopener">http://strml.net/</a></li>
+</ol>
+<p>乍一看是真的挺炫技的，不过问题也很突出：</p>
+<ul>
+<li>那个采用游戏交互的简历，其实没什么实质内容。</li>
+<li>那个采用敲代码交互的简历，确定HR愿意花这么多时间去等它敲完？</li>
+</ul>
+<p>不过能把简历做到这样的基本上也不用怎么面了吧。不过是大佬炫技的方式罢了，普通人绝不推荐用这种！<del>（叹气</del></p>
+<p>哎，忙完五线谱的插件，下次有空，再来填<code>@media print</code>的坑吧，毕竟打印版面这么乱也不行，现在是响应式时代啦</p>
+<p><del>（再叹气）</del></p>
+<!-- <iframe>
+</iframe> --></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+</article>
+    <div class="blog-post-comments">
+                <div id="load-disqus">
+                    <p onclick="loadDisqus()" style="cursor:pointer;text-align:center">🥳&nbsp;加载 Disqus 评论</p>
+                </div>
+                <div id="disqus_thread"><noscript>Please enable JavaScript to view the comments.</noscript></div>
+            </div>
+</div>
+
+<div id="footer-post-container">
+    <div id="footer-post" style="">
+        <div id="nav-footer" style="display:none">
+            <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/archive/">Article</a></li>
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/footprint/">Footmarks</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/about/">About</a></li>
+</ul>
+        </div>
+        <div id="toc-footer" style="display:none">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请-Bewerbung"><span class="toc-number">1.</span> <span class="toc-text">申请 - Bewerbung</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#材料-Dokumente"><span class="toc-number">2.</span> <span class="toc-text">材料 - Dokumente</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简历-Lebenslauf"><span class="toc-number">3.</span> <span class="toc-text">简历 - Lebenslauf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意-Achtung"><span class="toc-number">4.</span> <span class="toc-text">注意 - Achtung!</span></a></li></ol>
+        </div>
+        <div id="share-footer" style="display:none">
+            <ul>
+    <li><a class="icon"
+            href="http://www.facebook.com/sharer.php?u=http://alias.zone/tech/job_application/"
+            rel="external nofollow noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="https://twitter.com/share?url=http://alias.zone/tech/job_application/&amp;text=八月病"
+            rel="external nofollow noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="http://www.linkedin.com/shareArticle?url=http://alias.zone/tech/job_application/&amp;title=八月病"
+            rel="external nofollow noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+    </li>
+    <li><a class="icon"
+            href="mailto:?subject=八月病&amp;body=Check out this article: http://alias.zone/tech/job_application/"
+            rel="external nofollow noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+    </li>
+</ul>
+        </div>
+        <div id="actions-footer">
+            <a id="dark-mobile" class="icon"><i class="fa fa-sun" id="btn"
+    aria-hidden="true"></i> Switch</a> 
+    <a id="menu" class="icon" href="#"
+onclick="return $(&quot;#nav-footer&quot;).toggle(),!1"><i class="fas fa-bars fa-lg"
+    aria-hidden="true"></i> Menu</a> 
+    <a id="toc" class="icon" href="#"
+onclick="return $(&quot;#toc-footer&quot;).toggle(),!1"><i class="fas fa-list fa-lg"
+    aria-hidden="true"></i> TOC</a> 
+    <a id="top" style="" class="icon" href="#"
+    onclick="$(&quot;html, body&quot;).animate({scrollTop:0},&quot;fast&quot;)"><i
+        class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        
+            
+                <a id="read-mobile" class="icon"><i class="fas fa-book-open" id="btns"
+                    aria-hidden="true"></i> Eye-Protect</a> 
+            
+        
+         <a id="share" class="icon" href="#"
+onclick="return $(&quot;#share-footer&quot;).toggle(),!1"><i class="fas fa-share-alt fa-lg"
+    aria-hidden="true"></i> Share</a> 
+        </div>
+    </div>
+</div>
+
+<!-- 
+    
+        <script type="text/javascript">
+        $("a.gallery-item").each(function () {
+                $(this).css("cursor", "default");
+                $(this).attr('href', '#');     //修改<a>的 href属性值为 #  这样状态栏不会显示链接地址  
+                $(this).click(function (event) {
+                    event.preventDefault();   // 如果<a>定义了 target="_blank“ 需要这句来阻止打开新页面
+                });
+            });
+        </script>
+    
+ -->
+    <footer id="footer">
+    <div class="footer-left">Copyright &copy; 2020 Alias</div>
+    <div class="footer-right">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/archives/">Article</a></li>
+                <li><a href="/links/">Links</a></li>
+                <li><a href="/footprint/">Footmarks</a></li>
+                <li><a href="/search/">Search</a></li>
+                <li><a href="/about/">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+    <script>!function (t) { function e(t, e) { var n = new Image, o = t.getAttribute("data-original"); n.onload = function () { t.src = o, e && e() }, n.src = o } function n() { for (var n = 0; n < o.length; n++)i = o[n], 0 <= (c = i.getBoundingClientRect()).top && 0 <= c.left && c.top <= (t.innerHeight || document.documentElement.clientHeight) && e(o[n], function () { o.splice(n, n) }); var i, c; console.log("trigger") } var o = Array.prototype.slice.call(document.querySelectorAll("img[data-original]")); n(), t.addEventListener("scroll", function () { var e, o; e = n, o = t, clearTimeout(e.tId), e.tId = setTimeout(function () { e.call(o) }, 500) }) }(this)</script>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+<script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-163835166-1","auto"),ga("send","pageview")</script>
+<script type="text/javascript">function loadDisqus(){var e="netbeifeng";$("#load-disqus").hide(),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="//"+e+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)}()}</script>
+
+
+<script src="/libs/justifiedgallery/jquery.justifiedGallery.min.js"></script>
+<script src="/libs/lightgallery/src/js/lightgallery.min.js"></script>
+
+<script src="/js/main.js"></script>  
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":125,"height":125,"position":"right","hOffset":30,"vOffset":-20},"mobile":{"show":false,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2},"log":false});</script></body>
+
+</html>
