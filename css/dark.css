@@ -1343,7 +1343,7 @@ article .content video {
 	display: block;
 	margin: auto;
 	max-width: 100%;
-	height: auto
+	/* height: auto */
 }
 
 article .content .video-container {
@@ -1847,5 +1847,26 @@ code {
 
 .aplayer-title {
 	color: rgb(36, 35, 35);
+}
+
+svg text {
+	fill: #c9cacc;
+}
+
+svg path[stroke-width="0.3"], svg rect[stroke-width="0.3"] {
+	fill: #c9caccd0;
+}
+svg path[stroke-width="1.5"] {
+	stroke: #c9caccd0;
+}
+
+div.osmd-setting-container {
+	background-color: #262729;
+}
+div.output_icon {
+	background-color: #323539;
+}
+div.output_icon {
+	background-color: #424549;
 }
 /* rebuild by neat */
