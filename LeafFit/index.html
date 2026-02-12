@@ -33,6 +33,91 @@
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   
+  <style>
+    .video-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .plant-name {
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+    .plant-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      gap: 0.2rem;
+    }
+    .plant-label {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 80px;
+    }
+    .plant-label .title {
+      margin: 0;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+    .plant-images {
+      flex: 1;
+      display: flex;
+      gap: 0.2rem;
+    }
+    .plant-images .column {
+      flex: 1;
+    }
+    .plant-images .column p {
+      margin: 0;
+    }
+    /* Magnifier styles */
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      cursor: crosshair;
+    }
+    .image-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .magnifier-lens {
+      position: absolute;
+      border: 2px solid #ff6b6b;
+      width: 80px;
+      height: 80px;
+      background-size: 500% 500%;
+      background-repeat: no-repeat;
+      display: none;
+      pointer-events: none;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+    /* Hide video controls */
+    video::-webkit-media-controls {
+      display: none;
+    }
+    video {
+      pointer-events: none;
+    }
+  </style>
+  
   <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
@@ -50,7 +135,103 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-</head>
+
+  <script>
+    // Magnifier functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const plantRows = document.querySelectorAll('.plant-row:not([style*="margin-bottom: 1rem"])');
+      
+      plantRows.forEach(row => {
+        const plantImages = row.querySelector('.plant-images');
+        if (!plantImages) return;
+        
+        const columns = plantImages.querySelectorAll('.column');
+        const imgs = [];
+        const wrappers = [];
+        const lenses = [];
+        
+        // Initialize each image wrapper
+        columns.forEach((col, idx) => {
+          const img = col.querySelector('img');
+          if (!img) return; // Only process images, skip videos
+          
+          // Create wrapper
+          const wrapper = document.createElement('div');
+          wrapper.className = 'image-wrapper';
+          img.parentNode.replaceChild(wrapper, img);
+          wrapper.appendChild(img);
+          
+          // Create magnifier lens
+          const lens = document.createElement('div');
+          lens.className = 'magnifier-lens';
+          wrapper.appendChild(lens);
+          
+          imgs.push(img);
+          wrappers.push(wrapper);
+          lenses.push(lens);
+        });
+        
+        // Add event listeners
+        wrappers.forEach((wrapper, idx) => {
+          wrapper.addEventListener('mousemove', function(e) {
+            updateMagnifiers(e, wrappers, lenses, imgs);
+          });
+          
+          wrapper.addEventListener('mouseenter', function() {
+            lenses.forEach(lens => lens.style.display = 'block');
+          });
+          
+          wrapper.addEventListener('mouseleave', function() {
+            lenses.forEach(lens => lens.style.display = 'none');
+          });
+        });
+      });
+      
+      function updateMagnifiers(e, wrappers, lenses, imgs) {
+        const sourceWrapper = e.currentTarget;
+        const index = wrappers.indexOf(sourceWrapper);
+        if (index === -1) return;
+        
+        const rect = sourceWrapper.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+        
+        // Clamp coordinates to wrapper bounds
+        x = Math.max(0, Math.min(x, sourceWrapper.offsetWidth));
+        y = Math.max(0, Math.min(y, sourceWrapper.offsetHeight));
+        
+        const zoomLevel = 6;
+        
+        // Update all lenses in the row
+        lenses.forEach((lens, idx) => {
+          const img = imgs[idx];
+          const wrapper = wrappers[idx];
+          
+          // Position lens - center it on mouse position
+          let lensX = x - 40;
+          let lensY = y - 40;
+          
+          // Clamp lens position to stay within wrapper
+          const wWidth = wrapper.offsetWidth;
+          const wHeight = wrapper.offsetHeight;
+          
+          lensX = Math.max(0, Math.min(lensX, wWidth - 80));
+          lensY = Math.max(0, Math.min(lensY, wHeight - 80));
+          
+          lens.style.left = lensX + 'px';
+          lens.style.top = lensY + 'px';
+          
+          // Calculate zoom
+          const bgPosX = (x / wWidth * 100);
+          const bgPosY = (y / wHeight * 100);
+          
+          lens.style.backgroundImage = `url('${img.src}')`;
+          lens.style.backgroundSize = (wWidth * zoomLevel) + 'px ' + (wHeight * zoomLevel) + 'px';
+          lens.style.backgroundPosition = 'calc(' + bgPosX + '% - ' + (lensX + 40) + 'px) calc(' + bgPosY + '% - ' + (lensY + 40) + 'px)';
+        });
+      }
+    });
+  </script>
 <body>
 
 
@@ -112,6 +293,16 @@
                   </span>
                   <span>Code</span>
                   </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=7l-g5TWmFyU"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
               </span>
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
@@ -177,6 +368,18 @@
     </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+        
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/7l-g5TWmFyU?si=WNvtL0npiLiNZyAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+    </div>
+</section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -203,6 +406,394 @@
       </div>
     </div>
 
+</section>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results - Segmentation</h2>
+    
+    <!-- Column Headers -->
+    <div class="plant-row" style="margin-bottom: 1rem; font-weight: bold;">
+      <div class="plant-label"></div>
+      <div class="plant-images">
+        <div class="column">
+          <p class="has-text-centered"><small>Ground Truth</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>PointSeg</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>Euclidean Density</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>Ours (Geodesic)</small></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Plant 1 -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Green Pepper</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant1_gt.png" alt="Plant 1 Ground Truth"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant1_pointseg.png" alt="Plant 1 PointSeg"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant1_ours_euc.png" alt="Plant 1 Ours (Euclidean)"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant1_ours_geo.png" alt="Plant 1 Ours (Geodesic)"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 2 -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Cotton Rose</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant2_gt.png" alt="Plant 2 Ground Truth"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant2_pointseg.png" alt="Plant 2 PointSeg"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant2_ours_euc.png" alt="Plant 2 Ours (Euclidean)"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant2_ours_geo.png" alt="Plant 2 Ours (Geodesic)"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 4 -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">White Flag Bush</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant4_gt.png" alt="Plant 4 Ground Truth"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant4_pointseg.png" alt="Plant 4 PointSeg"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant4_ours_euc.png" alt="Plant 4 Ours (Euclidean)"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant4_ours_geo.png" alt="Plant 4 Ours (Geodesic)"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 5 -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Lucky Bamboo</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant5_gt.png" alt="Plant 5 Ground Truth"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant5_pointseg.png" alt="Plant 5 PointSeg"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant5_ours_euc.png" alt="Plant 5 Ours (Euclidean)"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant5_ours_geo.png" alt="Plant 5 Ours (Geodesic)"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant Default -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Rubber Tree</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant_gt.png" alt="Plant Ground Truth"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant_pointseg.png" alt="Plant PointSeg"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant_ours_euc.png" alt="Plant Ours (Euclidean)"/>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <img src="./static/images/segs/plant_ours_geo.png" alt="Plant Ours (Geodesic)"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results - Deformations</h2>
+    
+    <!-- Column Headers for Videos -->
+    <div class="plant-row" style="margin-bottom: 1rem; font-weight: bold;">
+      <div class="plant-label"></div>
+      <div class="plant-images">
+        <div class="column">
+          <p class="has-text-centered"><small>Ground Truth</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>NRICP</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>BCPD</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>Ours</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 1 Deformation -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Green Pepper</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/1_gt.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/1_icp.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/1_bcpd.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/1_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 5 Deformation -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Lucky Bamboo</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/5_gt.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/5_icp.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/5_bcpd.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/deformations/5_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results - Final Rendering</h2>
+    
+    <!-- Column Headers for Final Results -->
+    <div class="plant-row" style="margin-bottom: 0rem; font-weight: bold;">
+      <div class="plant-label"></div>
+      <div class="plant-images">
+        <div class="column">
+          <p class="has-text-centered"><small>3DGS</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>3DGS (Ellipsoid)</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>GoF</small></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><small>Ours</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 1 Final Results -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Green Pepper</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant1_3dgs_rendering.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant1_3dgs_elliposid_rendering.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant1_gof.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant1_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant 5 Final Results -->
+    <div class="plant-row">
+      <div class="plant-label">
+        <h3 class="title is-5"><span class="plant-name">Lucky Bamboo</span></h3>
+      </div>
+      <div class="plant-images">
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant5_3dgs_rendering.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant5_3dgs_elliposid_rendering.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant5_gof.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="image">
+            <video width="100%" autoplay muted loop style="background: #f5f5f5;">
+              <source src="./static/videos/final_results/plant5_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
