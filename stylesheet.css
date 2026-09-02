@@ -138,3 +138,35 @@ span.highlight {
 .paper-thumb {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
+
+/* News section */
+.news-item {
+  line-height: 1.45;
+  margin-top: 9px;
+}
+
+.news-date {
+  font-weight: 700;
+  color: #333;
+}
+
+.news-meta {
+  font-style: italic;
+  color: #666;
+  font-size: 13px;
+}
+
+.news-upcoming {
+  background-color: #e6f4ea;
+  color: #137333;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.news-placeholder {
+  color: #000;
+}
