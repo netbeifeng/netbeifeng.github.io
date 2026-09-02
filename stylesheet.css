@@ -170,3 +170,155 @@ span.highlight {
 .news-placeholder {
   color: #000;
 }
+
+/* ---- Theme (light / dark) ---- */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --link: #1772d0;
+  --link-hover: #f09228;
+  --muted: #666666;
+  --date: #333333;
+  --hl-bg: #ffffd0;
+  --hl-fg: inherit;
+  --pill-bg: #e6f4ea;
+  --pill-fg: #137333;
+  --thumb-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  --photo-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  --btn-bg: #f2f2f2;
+  --btn-border: #d4d4d4;
+}
+
+[data-theme="dark"] {
+  --bg: #15181d;
+  --fg: #e4e6ea;
+  --link: #6ab0f3;
+  --link-hover: #f09228;
+  --muted: #99a2ad;
+  --date: #e4e6ea;
+  --hl-bg: #4b4000;
+  --hl-fg: #ffe08a;
+  --pill-bg: #16351f;
+  --pill-fg: #7fe3a0;
+  --thumb-shadow: 0 0 0 1px rgba(255, 255, 255, 0.30), 0 0 24px 4px rgba(255, 255, 255, 0.30);
+  --photo-shadow: 0 0 0 1px rgba(255, 255, 255, 0.32), 0 0 30px 6px rgba(255, 255, 255, 0.34);
+  --btn-bg: #23272e;
+  --btn-border: #363b44;
+}
+
+body {
+  background-color: var(--bg);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+body,
+td,
+th,
+tr,
+p {
+  color: var(--fg);
+}
+
+a {
+  color: var(--link);
+}
+
+a:focus,
+a:hover {
+  color: var(--link-hover);
+}
+
+span.highlight {
+  background-color: var(--hl-bg);
+  color: var(--hl-fg);
+}
+
+.news-date {
+  color: var(--date);
+}
+
+.news-meta {
+  color: var(--muted);
+}
+
+.news-placeholder {
+  color: var(--fg);
+}
+
+.news-upcoming {
+  background-color: var(--pill-bg);
+  color: var(--pill-fg);
+}
+
+.paper-thumb {
+  box-shadow: var(--thumb-shadow);
+}
+
+.profile-photo {
+  box-shadow: var(--photo-shadow);
+}
+
+/* ---- Top bar: language switch + theme toggle ---- */
+.topbar {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch {
+  font-size: 13px;
+  padding: 5px 10px;
+  border: 1px solid var(--btn-border);
+  border-radius: 15px;
+  background-color: var(--btn-bg);
+}
+
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--btn-border);
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  color: var(--fg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  color: var(--link-hover);
+}
+
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* Japanese text fallbacks */
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+}
