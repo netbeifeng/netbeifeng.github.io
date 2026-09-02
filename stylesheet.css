@@ -329,3 +329,14 @@ a {
   vertical-align: -2px;
   margin-right: 4px;
 }
+
+name ruby rt {
+  font-size: 0.32em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+[data-theme="dark"] name ruby rt {
+  color: #9aa1ab;
+}
