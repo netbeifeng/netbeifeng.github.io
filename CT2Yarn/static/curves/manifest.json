@@ -1,0 +1,184 @@
+{
+ "P": {
+  "label": "P",
+  "stem": "P",
+  "auto": {
+   "file": "P_auto.bin",
+   "n_curves": 3,
+   "offsets": [
+    0,
+    6455,
+    11057,
+    12836
+   ],
+   "points": 12836
+  },
+  "final": {
+   "file": "P_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    12875
+   ],
+   "points": 12875
+  }
+ },
+ "G1": {
+  "label": "G",
+  "stem": "G1",
+  "auto": {
+   "file": "G1_auto.bin",
+   "n_curves": 8,
+   "offsets": [
+    0,
+    3426,
+    6148,
+    8469,
+    10398,
+    12215,
+    13252,
+    14055,
+    14496
+   ],
+   "points": 14496
+  },
+  "final": {
+   "file": "G1_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    14551
+   ],
+   "points": 14551
+  }
+ },
+ "two_normal": {
+  "label": "2",
+  "stem": "two_normal",
+  "auto": {
+   "file": "two_normal_auto.bin",
+   "n_curves": 7,
+   "offsets": [
+    0,
+    5322,
+    7947,
+    9978,
+    11837,
+    12456,
+    12724,
+    12947
+   ],
+   "points": 12947
+  },
+  "final": {
+   "file": "two_normal_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    13034
+   ],
+   "points": 13034
+  }
+ },
+ "six": {
+  "label": "6",
+  "stem": "six",
+  "auto": {
+   "file": "six_auto.bin",
+   "n_curves": 2,
+   "offsets": [
+    0,
+    8772,
+    13093
+   ],
+   "points": 13093
+  },
+  "final": {
+   "file": "six_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    13059
+   ],
+   "points": 13059
+  }
+ },
+ "single_stiches_patch1": {
+  "label": "patch1",
+  "stem": "single_stiches_patch1",
+  "auto": {
+   "file": "single_stiches_patch1_auto.bin",
+   "n_curves": 3,
+   "offsets": [
+    0,
+    4890,
+    8255,
+    10125
+   ],
+   "points": 10125
+  },
+  "final": {
+   "file": "single_stiches_patch1_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    10142
+   ],
+   "points": 10142
+  }
+ },
+ "single_stiches_patch2": {
+  "label": "patch2",
+  "stem": "single_stiches_patch2",
+  "auto": {
+   "file": "single_stiches_patch2_auto.bin",
+   "n_curves": 9,
+   "offsets": [
+    0,
+    3458,
+    6176,
+    8197,
+    9551,
+    10606,
+    11364,
+    12011,
+    12144,
+    12252
+   ],
+   "points": 12252
+  },
+  "final": {
+   "file": "single_stiches_patch2_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    12243
+   ],
+   "points": 12243
+  }
+ },
+ "single_stiches_patch3": {
+  "label": "patch3",
+  "stem": "single_stiches_patch3",
+  "auto": {
+   "file": "single_stiches_patch3_auto.bin",
+   "n_curves": 3,
+   "offsets": [
+    0,
+    7367,
+    8727,
+    9636
+   ],
+   "points": 9636
+  },
+  "final": {
+   "file": "single_stiches_patch3_final.bin",
+   "n_curves": 1,
+   "offsets": [
+    0,
+    9621
+   ],
+   "points": 9621
+  }
+ }
+}

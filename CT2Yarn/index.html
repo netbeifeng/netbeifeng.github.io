@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+            content="CT2Yarn: Yarn-Level Reconstruction of Crochet from Computed Tomography.">
+  <meta name="keywords" content="Crochet, Micro-CT, Yarn Reconstruction, CT2Yarn, Computer Graphics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🧶 CT2Yarn: Yarn-Level Reconstruction of Crochet from Computed Tomography</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+
+  <style>
+    .ds-marquee {
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: grab;
+      scrollbar-width: none;            /* the strip scrolls itself, no bar needed */
+      -ms-overflow-style: none;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    }
+    .ds-marquee::-webkit-scrollbar { display: none; }
+    .ds-marquee.is-dragging { cursor: grabbing; }
+    .ds-marquee.is-dragging .ds-item { pointer-events: none; }
+    .ds-track { display: flex; width: max-content; }
+    .ds-item { flex: 0 0 150px; padding: 0 7px; }
+    .ds-flip {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .ds-flip img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      transition: opacity 0.25s ease;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+    .ds-flip .ds-ct { opacity: 0; }
+    .ds-item:hover .ds-flip .ds-ct { opacity: 1; }
+    .ds-item:hover .ds-flip .ds-photo { opacity: 0; }
+    .ds-name {
+      font-size: 11px; color: #666; text-align: center; margin-top: 6px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      user-select: none;
+    }
+    .ds-hint { font-size: 13px; color: #888; margin-top: 10px; }
+    .cmp-table { width: 100%; }
+    .cmp-head, .cmp-row {
+      display: grid;
+      grid-template-columns: 74px repeat(4, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+    .cmp-head {
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .cmp-row { margin-bottom: 8px; }
+    .cmp-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      text-align: right;
+      padding-right: 2px;
+      white-space: nowrap;
+    }
+    .cmp-cell {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: #fafafa;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .cmp-cell img, .cmp-cell canvas {
+      width: 100%; height: 100%; display: block;
+    }
+
+    /* The two right-hand cells are live. They are styled as cards you can pick
+       up, so the affordance is visible without a sentence explaining it. */
+    .cmp-cell.cv-cell {
+      background: #fff;
+      cursor: grab;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08),
+                  0 0 0 1px rgba(16, 24, 40, 0.06);
+      transition: box-shadow 0.22s ease, transform 0.22s ease;
+      will-change: transform;
+    }
+    .cmp-cell.cv-cell::after {          /* the ring that breathes until first use */
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 6px;
+      box-shadow: 0 0 0 0 rgba(56, 132, 255, 0.45);
+      animation: cv-pulse 2.6s ease-out infinite;
+      pointer-events: none;
+    }
+    .cmp-cell.cv-cell.cv-hi {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.16),
+                  0 0 0 2px rgba(56, 132, 255, 0.55);
+    }
+    .cmp-cell.cv-cell:active { cursor: grabbing; transform: translateY(-1px); }
+    .cmp-cell.cv-touched::after { animation: none; box-shadow: none; }
+
+    @keyframes cv-pulse {
+      0%   { box-shadow: 0 0 0 0   rgba(56, 132, 255, 0.40); }
+      70%  { box-shadow: 0 0 0 9px rgba(56, 132, 255, 0.00); }
+      100% { box-shadow: 0 0 0 0   rgba(56, 132, 255, 0.00); }
+    }
+
+    /* the rotate glyph sits on a chip so it reads against any background */
+    .cv-grip {
+      position: absolute; right: 8px; top: 8px;
+      width: 26px; height: 26px; padding: 5px;
+      color: #1f2d3d;
+      background: rgba(255, 255, 255, 0.86);
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(16, 24, 40, 0.18);
+      opacity: 0.78;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+    }
+    .cmp-cell.cv-cell.cv-hi .cv-grip { opacity: 1; transform: rotate(38deg) scale(1.08); }
+    .cmp-cell.cv-touched .cv-grip { opacity: 0 !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cmp-cell.cv-cell::after { animation: none; }
+      .cmp-cell.cv-cell, .cv-grip { transition: none; }
+    }
+    .cv-count {
+      position: absolute; left: 50%; bottom: 7px;
+      transform: translateX(-50%);
+      font-size: 11px; color: #1f2d3d;
+      background: rgba(255, 255, 255, 0.86);
+      padding: 2px 8px; border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.14);
+      pointer-events: none;
+    }
+    .cv-loading {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: #999; pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .cmp-head { display: none; }
+      .cmp-row { grid-template-columns: 56px repeat(2, 1fr); }
+    }
+    .vid-caption {
+      font-size: 14px;
+      color: #4a4a4a;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size: 32px; line-height: 42px;">
+              <span style="font-size: 38px; display: block; margin-bottom: 8px;"><b>CT2Yarn</b>:</span>
+              Yarn-Level Reconstruction of Crochet from Computed Tomography
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://netbeifeng.github.io/">Chang Luo</a>,</span>
+            <span class="author-block">
+              <a href="https://cgenglab.github.io/en/authors/admin/">Umetani Nobuyuki</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The University of Tokyo</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><strong>Pacific Graphics 2026</strong></span>
+          </div>
+
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper -->
+              <span class="link-block">
+                <a href="../data/CT2Yarn.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2609.06950"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a href="https://github.com/netbeifeng/ct2yarn"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Video, not up yet -->
+              <span class="link-block">
+                <span class="external-link button is-normal is-rounded is-dark"
+                      style="opacity: 0.45; cursor: default;"
+                      title="Coming soon">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (soon)</span>
+                </span>
+              </span>
+              <!-- Dataset -->
+              <span class="link-block">
+                <a href="https://doi.org/10.5281/zenodo.22822228"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png" alt="CT2Yarn teaser" style="width: 100%;">
+      <h2 class="subtitle has-text-centered" style="margin-top: 12px;">
+        From real crocheted samples to a continuous yarn path. Starting from real crocheted
+        samples (a), we acquire micro-CT scans that reveal their internal structure (b). Our
+        pipeline reconstructs a single continuous yarn centerline (c), coloured by arc length,
+        and generates ply-level yarn geometry for rendering (d).
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce CT2Yarn, a human-in-the-loop framework for recovering a single
+            continuous yarn path from micro-computed tomography (micro-CT) scans of real
+            crochet objects. Crochet is a craft that creates complex three-dimensional shapes
+            by interlocking loops formed from a single yarn. Recovering the underlying yarn
+            path from external observations is challenging because of severe self-occlusion.
+            While micro-CT reveals the full internal structure of a crochet object, the
+            volumetric scan alone does not explicitly encode how the yarn traverses the object.
+          </p>
+          <p>
+            This challenge stems from the hierarchical structure of yarn: a yarn consists of
+            multiple twisted plies, and each ply itself consists of twisted fibers.
+            Consequently, local fiber orientations observed in micro-CT scans are not aligned
+            with the overall yarn direction. To recover yarn-level orientations from ply-level
+            fiber orientations, we first estimate local fiber directions using Gabor filtering
+            and convert the volume into an oriented point cloud. We then introduce an
+            anisotropic mean-shift procedure that aggregates local fiber orientations within a
+            neighborhood of the yarn radius into yarn-level orientation estimates.
+          </p>
+          <p>
+            Combined with an automatic topology skeletonization strategy, our method extracts
+            yarn-path fragments. Subsequent fragment linking, junction cleaning, and loop
+            detection merge these trees into a small number of long curves. Where the automatic
+            reconstruction remains ambiguous, a sketch-based user interface enables users to
+            interactively complete the single continuous yarn path. The recovered yarn path
+            enables downstream applications including physically based simulation, ply-level
+            rendering, and stitch-pattern extraction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Pipeline</h2>
+        <img src="./static/images/pipeline.png" alt="CT2Yarn pipeline" style="width: 100%;">
+        <p class="vid-caption has-text-justified" style="margin-top: 14px;">
+          A crocheted sample is scanned, converted into an oriented point cloud by Gabor
+          filtering, condensed onto the yarn centre by an anisotropic mean shift, skeletonized
+          into fragments, and finally repaired into one continuous centerline.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Reconstruction</h2>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="columns is-mobile is-centered">
+          <div class="column is-half has-text-centered">
+            <video poster="" autoplay muted loop playsinline style="width: 100%;">
+              <source src="./static/videos/volume_turntable.mp4" type="video/mp4">
+            </video>
+            <p class="vid-caption">The micro-CT volume. Every yarn cross-section is
+            visible, the path through the fabric is not.</p>
+          </div>
+          <div class="column is-half has-text-centered">
+            <video poster="" autoplay muted loop playsinline style="width: 100%;">
+              <source src="./static/videos/centerline_turntable.mp4" type="video/mp4">
+            </video>
+            <p class="vid-caption">The recovered centerline, one continuous strand,
+            coloured by arc length.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dataset</h2>
+    <div class="content has-text-justified">
+      <p>
+        Eighteen micro-CT scans of real crocheted samples, each one continuous yarn. Each
+        tile shows the photograph of the physical piece and, on hover, the volume rendering
+        of its scan. The raw volumes are archived on
+        <a href="https://doi.org/10.5281/zenodo.22822228">Zenodo</a> under CC BY 4.0.
+      </p>
+    </div>
+    <div class="ds-marquee">
+      <div class="ds-track">
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/arrow.jpg" alt="arrow photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/arrow.jpg" alt="arrow CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">arrow</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/bar.jpg" alt="bar photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/bar.jpg" alt="bar CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">bar</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/G1.jpg" alt="G1 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/G1.jpg" alt="G1 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">G1</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/H.jpg" alt="H photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/H.jpg" alt="H CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">H</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/O.jpg" alt="O photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/O.jpg" alt="O CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">O</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/P.jpg" alt="P photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/P.jpg" alt="P CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">P</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/six.jpg" alt="six photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/six.jpg" alt="six CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">six</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/X.jpg" alt="X photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/X.jpg" alt="X CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">X</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/Y.jpg" alt="Y photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/Y.jpg" alt="Y CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">Y</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/C_chain_stiches.jpg" alt="C_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/C_chain_stiches.jpg" alt="C_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">C_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/O_chain_stiches.jpg" alt="O_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/O_chain_stiches.jpg" alt="O_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">O_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/S_chain_stiches.jpg" alt="S_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/S_chain_stiches.jpg" alt="S_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">S_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch1.jpg" alt="single_stiches_patch1 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch1.jpg" alt="single_stiches_patch1 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch1</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch2.jpg" alt="single_stiches_patch2 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch2.jpg" alt="single_stiches_patch2 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch2</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch3.jpg" alt="single_stiches_patch3 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch3.jpg" alt="single_stiches_patch3 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch3</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_loose.jpg" alt="two_loose photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_loose.jpg" alt="two_loose CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_loose</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_normal.jpg" alt="two_normal photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_normal.jpg" alt="two_normal CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_normal</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_tight.jpg" alt="two_tight photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_tight.jpg" alt="two_tight CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_tight</div>
+        </div>
+<!-- second copy, so translating by -50% lands exactly on the first -->
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/arrow.jpg" alt="arrow photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/arrow.jpg" alt="arrow CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">arrow</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/bar.jpg" alt="bar photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/bar.jpg" alt="bar CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">bar</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/G1.jpg" alt="G1 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/G1.jpg" alt="G1 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">G1</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/H.jpg" alt="H photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/H.jpg" alt="H CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">H</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/O.jpg" alt="O photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/O.jpg" alt="O CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">O</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/P.jpg" alt="P photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/P.jpg" alt="P CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">P</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/six.jpg" alt="six photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/six.jpg" alt="six CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">six</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/X.jpg" alt="X photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/X.jpg" alt="X CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">X</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/Y.jpg" alt="Y photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/Y.jpg" alt="Y CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">Y</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/C_chain_stiches.jpg" alt="C_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/C_chain_stiches.jpg" alt="C_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">C_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/O_chain_stiches.jpg" alt="O_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/O_chain_stiches.jpg" alt="O_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">O_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/S_chain_stiches.jpg" alt="S_chain_stiches photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/S_chain_stiches.jpg" alt="S_chain_stiches CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">S_chain_stiches</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch1.jpg" alt="single_stiches_patch1 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch1.jpg" alt="single_stiches_patch1 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch1</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch2.jpg" alt="single_stiches_patch2 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch2.jpg" alt="single_stiches_patch2 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch2</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/single_stiches_patch3.jpg" alt="single_stiches_patch3 photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/single_stiches_patch3.jpg" alt="single_stiches_patch3 CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">single_stiches_patch3</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_loose.jpg" alt="two_loose photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_loose.jpg" alt="two_loose CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_loose</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_normal.jpg" alt="two_normal photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_normal.jpg" alt="two_normal CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_normal</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-flip">
+            <img class="ds-photo" src="./static/images/samples/two_tight.jpg" alt="two_tight photograph" loading="lazy">
+            <img class="ds-ct" src="./static/images/volumes/two_tight.jpg" alt="two_tight CT volume" loading="lazy">
+          </div>
+          <div class="ds-name">two_tight</div>
+        </div>
+      </div>
+    </div>
+    <p class="ds-hint has-text-centered">Hover to pause and reveal the CT volume. Drag to browse.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <div class="content has-text-justified">
+      <p>
+        Seven samples end to end. The automatic stage leaves the yarn in a handful of long
+        curves, each drawn in its own colour. Closing the remaining ambiguities by hand
+        yields one continuous strand, coloured by arc length, green at the start and red at
+        the end.
+      </p>
+    </div>
+
+    <div class="cmp-table">
+      <div class="cmp-head">
+        <div class="cmp-label"></div>
+        <div>Photograph</div>
+        <div>CT volume</div>
+        <div>Reconstructed</div>
+        <div>Final curve</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">P</div>
+        <div class="cmp-cell"><img src="./static/images/samples/P.jpg" alt="P photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/P.jpg" alt="P CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="P" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="P" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">G</div>
+        <div class="cmp-cell"><img src="./static/images/samples/G1.jpg" alt="G photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/G1.jpg" alt="G CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="G1" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="G1" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">2</div>
+        <div class="cmp-cell"><img src="./static/images/samples/two_normal.jpg" alt="2 photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/two_normal.jpg" alt="2 CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="two_normal" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="two_normal" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">6</div>
+        <div class="cmp-cell"><img src="./static/images/samples/six.jpg" alt="6 photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/six.jpg" alt="6 CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="six" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="six" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">patch1</div>
+        <div class="cmp-cell"><img src="./static/images/samples/single_stiches_patch1.jpg" alt="patch1 photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/single_stiches_patch1.jpg" alt="patch1 CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch1" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch1" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">patch2</div>
+        <div class="cmp-cell"><img src="./static/images/samples/single_stiches_patch2.jpg" alt="patch2 photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/single_stiches_patch2.jpg" alt="patch2 CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch2" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch2" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-label">patch3</div>
+        <div class="cmp-cell"><img src="./static/images/samples/single_stiches_patch3.jpg" alt="patch3 photograph"></div>
+        <div class="cmp-cell"><img src="./static/images/volumes/single_stiches_patch3.jpg" alt="patch3 CT volume"></div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch3" data-view="auto">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+        <div class="cmp-cell cv-cell" data-stem="single_stiches_patch3" data-view="final">
+          <canvas></canvas><div class="cv-loading">loading</div><div class="cv-count"></div>
+          <svg class="cv-grip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Applications</h2>
+
+    <img src="./static/images/applications.jpg" alt="Downstream applications"
+         style="width: 100%; margin-bottom: 10px;">
+
+    <div class="content has-text-justified">
+      <p>
+        The recovered centerline is a plain polyline, so it feeds straight into downstream
+        uses. Code for all three is in the
+        <a href="https://github.com/netbeifeng/ct2yarn">repository</a>.
+      </p>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <video poster="" autoplay muted loop playsinline style="width: 100%;">
+          <source src="./static/videos/plies.mp4" type="video/mp4">
+        </video>
+        <p class="vid-caption has-text-left">
+          <b>Ply-level rendering.</b> The centerline carries no thickness, so we wrap it with
+          a coaxial-helix procedural ply model and render it in Mitsuba 3, with Perlin noise
+          along the ply axis for the fibre-level fuzz.
+        </p>
+      </div>
+      <div class="column has-text-centered">
+        <video poster="" autoplay muted loop playsinline style="width: 100%;">
+          <source src="./static/videos/simulation.mp4" type="video/mp4">
+        </video>
+        <p class="vid-caption has-text-left">
+          <b>Physically based simulation.</b> The centerline is treated as a discrete elastic
+          rod and integrated under gravity and self-contact. Here P, G, 2 and 6 fall
+          into a glass bowl.
+        </p>
+      </div>
+      <div class="column has-text-centered">
+        <video poster="" autoplay muted loop playsinline style="width: 100%;">
+          <source src="./static/videos/stitches.mp4" type="video/mp4">
+        </video>
+        <p class="vid-caption has-text-left">
+          <b>Stitch pattern extraction.</b> The path is split into stitches, each aligned
+          against a small template library with the Kabsch algorithm and labelled by the type
+          of smallest RMSD.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@inproceedings{ct2yarn_luo26,
+    booktitle = {Pacific Graphics 2026 - Conference Papers and Posters},
+    editor    = {He, Ying and Thuerey, Nils and Liu, Lingjie},
+    title     = {{CT2Yarn: Yarn-Level Reconstruction of Crochet from Computed Tomography}},
+    author    = {Luo, Chang and Umetani, Nobuyuki},
+    year      = {2026},
+    publisher = {The Eurographics Association},
+    ISBN      = {978-3-03868-327-8},
+    DOI       = {10.2312/pg.20261024}
+}
+    </code></pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</section>
+
+<script type="module">
+  import { initCurveViewers } from './static/js/curveviewer.js';
+  initCurveViewers('./static/curves/manifest.json', './static/curves/');
+</script>
+
+<script>
+// The dataset strip scrolls itself, but a visitor must be able to take over.
+// A CSS keyframe animation cannot be dragged, so the motion is driven by
+// scrollLeft on a real scroll container: wheel, touch and drag then work for
+// free, and the loop wraps by subtracting one copy's width.
+(function () {
+  const box = document.querySelector('.ds-marquee');
+  if (!box) return;
+  const track = box.querySelector('.ds-track');
+  const SPEED = 0.35;                 // px per frame
+  let paused = false, dragging = false, startX = 0, startScroll = 0, moved = 0;
+
+  const half = () => track.scrollWidth / 2;   // the strip holds two copies
+
+  box.addEventListener('pointerenter', () => { paused = true; });
+  box.addEventListener('pointerleave', () => { paused = false; });
+
+  box.addEventListener('pointerdown', e => {
+    dragging = true; moved = 0;
+    startX = e.clientX; startScroll = box.scrollLeft;
+    box.classList.add('is-dragging');
+    box.setPointerCapture(e.pointerId);
+  });
+  box.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    moved = Math.max(moved, Math.abs(dx));
+    box.scrollLeft = startScroll - dx;
+  });
+  const stop = e => {
+    if (!dragging) return;
+    dragging = false;
+    box.classList.remove('is-dragging');
+    try { box.releasePointerCapture(e.pointerId); } catch (_) {}
+  };
+  box.addEventListener('pointerup', stop);
+  box.addEventListener('pointercancel', stop);
+  // a drag should not count as a tap on the tile underneath
+  box.addEventListener('click', e => { if (moved > 4) { e.stopPropagation(); e.preventDefault(); } }, true);
+
+  (function tick() {
+    requestAnimationFrame(tick);
+    if (!paused && !dragging) box.scrollLeft += SPEED;
+    const h = half();
+    if (h > 0) {
+      if (box.scrollLeft >= h) box.scrollLeft -= h;       // wrap forward
+      else if (box.scrollLeft <= 0) box.scrollLeft += h;  // and backward when dragged
+    }
+  })();
+})();
+</script>
+
+</body>
+</html>
