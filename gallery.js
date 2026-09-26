@@ -23,10 +23,15 @@
       img.addEventListener('click', function () { hidePreview(true); openLightbox(link, i); });
       preview.appendChild(img);
     });
+    // Fixed placement: the strip's left edge sits on the link's left edge,
+    // 8px below it.  The thumbnails have a fixed CSS size, so the strip has
+    // the same width before and after the images load and never shifts.
     var r = link.getBoundingClientRect();
     preview.style.display = 'flex';
     var w = preview.offsetWidth;
-    var left = Math.min(Math.max(8, r.left + window.scrollX + r.width / 2 - w / 2), window.scrollX + document.documentElement.clientWidth - w - 8);
+    var left = r.left + window.scrollX;
+    var maxLeft = window.scrollX + document.documentElement.clientWidth - w - 8;
+    if (left > maxLeft) left = Math.max(8, maxLeft);
     preview.style.left = left + 'px';
     preview.style.top = (r.bottom + window.scrollY + 8) + 'px';
   }
