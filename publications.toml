@@ -19,6 +19,7 @@ website  = { en = "website",          ja = "プロジェクトページ" }
 code     = { en = "code",             ja = "コード" }
 data     = { en = "data",             ja = "データ" }
 slides   = { en = "slides",           ja = "スライド" }
+poster   = { en = "poster",           ja = "ポスター" }
 video    = { en = "video",            ja = "動画" }
 bibtex   = "bibtex"
 
@@ -108,5 +109,6 @@ year        = 2024
 [publications.links]
 paper   = "data/Motion2VecSets_CVPR.pdf"
 arxiv   = "https://arxiv.org/abs/2401.06614"
+poster  = "data/M2V_cvpr_poster.pdf"
 website = "https://vveicao.github.io/projects/Motion2VecSets/"
 code    = "https://github.com/VVeiCao/Motion2VecSets"
