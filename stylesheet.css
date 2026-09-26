@@ -409,3 +409,29 @@ name ruby rt {
 .photo-lightbox .lb-close { top: 10px; right: 16px; font-size: 40px; }
 .photo-lightbox .lb-prev { left: 6px; top: 50%; transform: translateY(-50%); }
 .photo-lightbox .lb-next { right: 6px; top: 50%; transform: translateY(-50%); }
+
+/* ---- Narrow screens (phones): stack the two-column layouts ---- */
+@media (max-width: 640px) {
+  html, body { overflow-x: hidden; }
+  body { padding: 0 4px; }
+  img { max-width: 100%; height: auto; }
+
+  /* every two-column table row becomes a vertical stack */
+  table, tbody, tr, td { display: block; width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+  td { padding: 8px 10px !important; }
+
+  /* header: bio first, photo below, centred and smaller */
+  td[style*="width:40%"] { text-align: center; padding-top: 0 !important; }
+  .profile-photo { width: 58% !important; max-width: 58% !important; }
+
+  /* publication cards: centred thumbnail above the text, tighter spacing */
+  td[style*="width:25%"] { padding: 18px 10px 4px !important; }
+  td[style*="width:25%"] img.paper-thumb { width: 62%; max-width: 240px; }
+  td[style*="width:75%"] { padding: 4px 10px 14px !important; }
+  td[style*="width:75%"] p:last-child { margin: 0; }
+
+  papertitle { font-size: 15px; }
+  .news-meta { font-size: 12px; }
+  heading { font-size: 22px; }
+  .topbar { top: 8px; right: 8px; }
+}
