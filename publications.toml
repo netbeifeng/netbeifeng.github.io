@@ -98,6 +98,7 @@ arxiv    = "https://arxiv.org/abs/2602.11577"
 paper_ja = "data/VC26_LeafFit_ja.pdf"
 website  = "./LeafFit/"
 code     = "https://github.com/netbeifeng/leaf_fit"
+video    = "https://www.youtube.com/watch?v=7l-g5TWmFyU"
 
 [[publications]]
 image       = "images/motion2vecset.gif"
@@ -113,3 +114,4 @@ arxiv   = "https://arxiv.org/abs/2401.06614"
 poster  = "data/M2V_cvpr_poster.pdf"
 website = "https://vveicao.github.io/projects/Motion2VecSets/"
 code    = "https://github.com/VVeiCao/Motion2VecSets"
+video   = "https://www.youtube.com/watch?v=VXI3y2o0SqY"
