@@ -49,6 +49,22 @@
   <script src="./static/js/bulma-slider.min.js"></script>
 
   <style>
+    .video-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
     .ds-marquee {
       overflow-x: auto;
       overflow-y: hidden;
@@ -257,16 +273,15 @@
                   <span>Code</span>
                 </a>
               </span>
-              <!-- Video, not up yet -->
+              <!-- Video -->
               <span class="link-block">
-                <span class="external-link button is-normal is-rounded is-dark"
-                      style="opacity: 0.45; cursor: default;"
-                      title="Coming soon">
+                <a href="https://www.youtube.com/watch?v=CWyazq2m4Yo"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video (soon)</span>
-                </span>
+                  <span>Video</span>
+                </a>
               </span>
               <!-- Dataset -->
               <span class="link-block">
@@ -340,6 +355,18 @@
       </div>
     </div>
   </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Video -->
+    <div class="columns is-centered has-text-centered">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/CWyazq2m4Yo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+    </div>
 </section>
 
 
