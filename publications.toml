@@ -1,0 +1,112 @@
+# Publication cards for index.html (English) and index-ja.html (Japanese).
+#
+# Edit this file only. Run `python3 scripts/build_publications.py` (or just push:
+# the GitHub Action does it) and both pages are regenerated from it.
+# News is NOT managed here; keep editing it directly in the HTML.
+#
+# Any text field can be a plain string (same in both languages) or a table
+# { en = "...", ja = "..." } when the two pages should differ.
+# Cards appear on the page in the order they are listed below.
+
+# ---------------------------------------------------------------------------
+# Link labels: a card's [publications.links] keys must come from this list.
+# ---------------------------------------------------------------------------
+[link_labels]
+paper    = { en = "paper",            ja = "論文" }
+arxiv    = "arXiv"
+paper_ja = { en = "paper (Japanese)", ja = "和文抄録" }
+website  = { en = "website",          ja = "プロジェクトページ" }
+code     = { en = "code",             ja = "コード" }
+data     = { en = "data",             ja = "データ" }
+slides   = { en = "slides",           ja = "スライド" }
+video    = { en = "video",            ja = "動画" }
+bibtex   = "bibtex"
+
+# ---------------------------------------------------------------------------
+# People. Reference them in `authors` by key; append "*" for equal contribution.
+# `bold = true` renders the name in bold (you). `url` is optional.
+# ---------------------------------------------------------------------------
+[people.me]
+name = { en = "Chang Luo", ja = "羅 暢" }
+bold = true
+
+[people.umetani]
+name = { en = "Umetani Nobuyuki", ja = "梅谷 信行" }
+url  = { en = "https://cgenglab.github.io/en/authors/admin/", ja = "https://cgenglab.github.io/ja/authors/admin/" }
+
+[people.tang]
+name = "Jiapeng Tang"
+url  = "https://tangjiapeng.github.io"
+
+[people.cao]
+name = "Wei Cao"
+url  = "https://vveicao.github.io/"
+
+[people.zhang]
+name = "Biao Zhang"
+url  = "https://1zb.github.io/"
+
+[people.liu]
+name = "Yaoyao Liu"
+url  = "https://yaoyaoliu.csl.illinois.edu/"
+
+[people.niessner]
+name = "Matthias Nießner"
+url  = "http://niessnerlab.org/members/matthias_niessner/profile.html"
+
+# ---------------------------------------------------------------------------
+# Cards. Fields: image, image_width (default 190), title, authors, venue,
+# year (optional), links, hidden (optional, true keeps the card off the page).
+# ---------------------------------------------------------------------------
+[[publications]]
+image   = "images/ct2yarn.gif"
+title   = "CT2Yarn: Yarn-Level Reconstruction of Crochet from Computed Tomography"
+authors = ["me", "umetani"]
+venue   = { en = "Proceedings of Pacific Graphics (<b>PG</b>)", ja = "Pacific Graphics (<b>PG</b>) 予稿集" }
+year    = 2026
+
+[publications.links]
+paper   = "data/CT2Yarn.pdf"
+arxiv   = "https://arxiv.org/abs/2609.06950"
+website = "./CT2Yarn/"
+code    = "https://github.com/netbeifeng/ct2yarn"
+data    = "https://doi.org/10.5281/zenodo.22822228"
+
+[[publications]]
+image   = "images/tpami.png"
+title   = "Motion2VecSets: Non-Rigid Shape Reconstruction and Tracking with 4D Latent Set Diffusion"
+authors = ["tang*", "cao*", "zhang*", "me*", "liu", "niessner"]
+venue   = { en = "IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>)", ja = "IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>) 誌" }
+
+[publications.links]
+paper   = "data/Motion2VecSets_TPAMI.pdf"
+website = "https://vveicao.github.io/projects/Motion2VecSets/"
+code    = "https://github.com/VVeiCao/Motion2VecSets"
+
+[[publications]]
+image   = "images/leaffit.gif"
+title   = "LeafFit: Plant Assets Creation from 3D Gaussian Splatting"
+authors = ["me", "umetani"]
+venue   = { en = "Computer Graphics Forum (<b>Eurographics</b>)", ja = "Computer Graphics Forum 誌 (<b>Eurographics</b>)" }
+year    = 2026
+
+[publications.links]
+paper    = "data/LeafFit.pdf"
+arxiv    = "https://arxiv.org/abs/2602.11577"
+paper_ja = "data/VC26_LeafFit_ja.pdf"
+website  = "./LeafFit/"
+code     = "https://github.com/netbeifeng/leaf_fit"
+
+[[publications]]
+image       = "images/motion2vecset.gif"
+image_width = 185
+title       = "Motion2VecSets: 4D Latent Vector Set Diffusion for Non-rigid Shape Reconstruction and Tracking"
+authors     = ["cao*", "me*", "zhang", "niessner", "tang"]
+venue       = "IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)"
+year        = 2024
+
+[publications.links]
+paper   = "data/Motion2VecSets_CVPR.pdf"
+arxiv   = "https://arxiv.org/abs/2401.06614"
+website = "https://vveicao.github.io/projects/Motion2VecSets/"
+code    = "https://github.com/VVeiCao/Motion2VecSets"

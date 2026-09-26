@@ -1,0 +1,45 @@
+# netbeifeng.github.io
+
+Personal homepage, served by GitHub Pages from `main`.
+
+| File | Purpose |
+| --- | --- |
+| `index.html` / `index-ja.html` | English / Japanese pages. Bio and **News** are edited by hand. |
+| `publications.toml` | **The only place to edit publications.** One card here → one entry on both pages. |
+| `scripts/build_publications.py` | Renders the cards into both pages (between the `PUBLICATIONS:START/END` markers). |
+| `.github/workflows/static.yml` | On every push: runs the script, commits the regenerated pages if needed, deploys. |
+
+## Adding a publication
+
+1. Put the thumbnail in `images/` and the PDF in `data/`.
+2. Append a card to `publications.toml` (cards appear in file order, so put newest first):
+
+   ```toml
+   [[publications]]
+   image   = "images/mypaper.gif"        # image_width = 190 by default
+   title   = "MyPaper: Something Great"
+   authors = ["me", "umetani"]           # keys from [people]; add "*" for equal contribution
+   venue   = { en = "Proceedings of X (<b>X</b>)", ja = "X (<b>X</b>) 予稿集" }
+   year    = 2027                        # optional
+
+   [publications.links]                  # keys from [link_labels]; order = display order
+   paper   = "data/mypaper.pdf"
+   arxiv   = "https://arxiv.org/abs/..."
+   website = "./MyPaper/"
+   code    = "https://github.com/netbeifeng/mypaper"
+   ```
+
+   New coauthor? Add a `[people.<key>]` block. New kind of link? Add it to `[link_labels]`.
+   Any text field takes either a plain string or `{ en = "...", ja = "..." }`.
+3. Push. The GitHub Action regenerates both pages and deploys.
+
+To preview locally first (Python 3.11+, no packages needed):
+
+```sh
+python3 scripts/build_publications.py          # rewrites index.html and index-ja.html
+python3 scripts/build_publications.py --check  # only reports whether they are stale
+```
+
+Running it locally before pushing is recommended: then the Action finds nothing to commit and
+you never need to `git pull` a bot commit. Never edit the block between the
+`PUBLICATIONS:START` and `PUBLICATIONS:END` comments by hand; it is overwritten on every build.
