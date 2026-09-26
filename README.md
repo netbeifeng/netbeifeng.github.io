@@ -1,4 +1,4 @@
-# netbeifeng.github.io
+# chang9luo.github.io
 
 Personal homepage, served by GitHub Pages from `main`.
 
@@ -26,7 +26,7 @@ Personal homepage, served by GitHub Pages from `main`.
    paper   = "data/mypaper.pdf"
    arxiv   = "https://arxiv.org/abs/..."
    website = "./MyPaper/"
-   code    = "https://github.com/netbeifeng/mypaper"
+   code    = "https://github.com/chang9luo/mypaper"
    ```
 
    New coauthor? Add a `[people.<key>]` block. New kind of link? Add it to `[link_labels]`.
